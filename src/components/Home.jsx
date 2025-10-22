@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from "react";
+import {Link} from "react-router-dom";
 
 const Home = () => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [hoveredInitiative, setHoveredInitiative] = useState(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -15,14 +17,74 @@ const Home = () => {
     setIsFlipped(!isFlipped);
   };
 
+  const initiatives = [
+    {
+      id: 1,
+      title: "Tech Vistara",
+      icon: "🎯",
+      description:
+        "An annual technical fest featuring hackathons, workshops, and competitions to showcase innovation and technical prowess.",
+      expanded:
+        "Tech Vistara is our flagship annual technical festival that brings together students, professionals, and tech enthusiasts. It features multiple tracks including hackathons, coding competitions, tech talks, and hands-on workshops covering emerging technologies.",
+    },
+    {
+      id: 2,
+      title: "CSOC",
+      icon: "💻",
+      description:
+        "Codeshack Summer of Code - A mentorship program for students to contribute to open-source projects.",
+      expanded:
+        "CSOC is an intensive summer program designed to introduce students to open-source development. Participants work on real-world projects under the guidance of experienced mentors, learning industry best practices and contributing to the open-source community.",
+    },
+    {
+      id: 3,
+      title: "Eureka!",
+      icon: "💡",
+      description:
+        "An International Business Model competition with prizes and incentives worth more than 1.2 crore INR.",
+      expanded:
+        "Eureka! is regarded as Asia's largest B-Model Competition by CNN. It provides a platform for aspiring entrepreneurs to showcase their innovative business ideas and compete for substantial prizes while receiving mentorship from industry leaders.",
+    },
+    {
+      id: 4,
+      title: "Illuminate",
+      icon: "✨",
+      description:
+        "Workshop series focusing on emerging technologies and skill development for students.",
+      expanded:
+        "Illuminate is a comprehensive workshop series that covers cutting-edge technologies including AI/ML, Web Development, Cloud Computing, and more. These hands-on sessions are designed to bridge the gap between academic learning and industry requirements.",
+    },
+    {
+      id: 5,
+      title: "Campus Ambassador",
+      icon: "🎓",
+      description:
+        "Leadership program to represent Codeshack across different colleges and institutions.",
+      expanded:
+        "Our Campus Ambassador program creates a network of student leaders who represent Codeshack values and initiatives. Ambassadors gain leadership experience, networking opportunities, and exclusive access to events and resources.",
+    },
+    {
+      id: 6,
+      title: "EnB Club",
+      icon: "🚀",
+      description:
+        "Entrepreneurship and Business Club promoting startup culture and business acumen.",
+      expanded:
+        "EnB Club at IIT Bombay focuses on fostering entrepreneurship and business skills among students. It organizes startup competitions, business plan workshops, and provides mentorship for budding entrepreneurs.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-x-hidden">
-      <main className="relative pt-24 pb-20">
+      <section
+        id="hero"
+        className="relative pt-24 pb-20 min-h-screen flex items-center"
+      >
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 min-h-[80vh]">
             <div className="flex-1 space-y-4 sm:space-y-6 max-w-2xl text-center lg:text-left">
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight animate-fade-in">
-                <span className="text-amber-400">CODESHACK</span>
+                <span className="text-[#BD9f67]">CODESHACK</span>
                 <br />
                 <span className="text-white">SMVIT</span>
               </h1>
@@ -30,14 +92,14 @@ const Home = () => {
               <p className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed">
                 The Technical Club of Sir MVIT has been inspiring students since
                 its inception. Codeshack is the parent organization for{" "}
-                <span className="text-amber-400 font-semibold">GLUG</span>{" "}
+                <span className="text-[#BD9f67] font-semibold">GLUG</span>{" "}
                 (GNU/Linux Users Group) and{" "}
-                <span className="text-amber-400 font-semibold">TechHub</span>,
+                <span className="text-[#BD9f67] font-semibold">TechHub</span>,
                 promoting innovation, collaboration, and technical excellence as
                 the premier student-run tech community.
               </p>
 
-              <button className="group bg-amber-400 text-slate-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-amber-500 transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl hover:scale-105 mx-auto lg:mx-0 cursor-pointer">
+              <button className="group bg-[#BD9f67] text-slate-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-[#A88A5C] transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl hover:scale-105 mx-auto lg:mx-0 cursor-pointer">
                 Know More
                 <svg
                   className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
@@ -57,8 +119,8 @@ const Home = () => {
 
             <div className="flex-1 flex justify-center items-center">
               <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-                <div className="absolute inset-0 rounded-full border-4 border-amber-400/30 animate-spin-slow"></div>
-                <div className="absolute inset-6 sm:inset-8 rounded-full border-4 border-amber-400/50 animate-spin-reverse"></div>
+                <div className="absolute inset-0 rounded-full border-4 border-[#BD9f67]/30 animate-spin-slow"></div>
+                <div className="absolute inset-6 sm:inset-8 rounded-full border-4 border-[#BD9f67]/50 animate-spin-reverse"></div>
 
                 <div
                   className="absolute inset-0 flex items-center justify-center cursor-pointer perspective-1000"
@@ -70,9 +132,9 @@ const Home = () => {
                     }`}
                   >
                     <div className="absolute inset-0 flex items-center justify-center backface-hidden">
-                      <div className="bg-slate-800 rounded-full p-6 sm:p-8 border-4 border-amber-400 shadow-2xl hover:shadow-amber-400/50 transition-shadow duration-300">
+                      <div className="bg-slate-800 rounded-full p-6 sm:p-8 border-4 border-[#BD9f67] shadow-2xl hover:shadow-[#BD9f67]/50 transition-shadow duration-300">
                         <img
-                          src="/glug-logo.jpg"
+                          src="/Glug-logo.jpg"
                           alt="GLUG Logo"
                           className="w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full object-contain"
                         />
@@ -80,7 +142,7 @@ const Home = () => {
                     </div>
 
                     <div className="absolute inset-0 flex items-center justify-center backface-hidden rotate-y-180">
-                      <div className="bg-slate-800 rounded-full p-6 sm:p-8 border-4 border-amber-400 shadow-2xl flex items-center justify-center">
+                      <div className="bg-slate-800 rounded-full p-6 sm:p-8 border-4 border-[#BD9f67] shadow-2xl flex items-center justify-center">
                         <img
                           src="/techhub-logo.jpg"
                           alt="TechHub Logo"
@@ -91,7 +153,7 @@ const Home = () => {
                   </div>
                 </div>
 
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-amber-400 text-slate-900 px-4 sm:px-6 py-2 rounded-full font-bold shadow-lg text-sm sm:text-base whitespace-nowrap">
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-[#BD9f67] text-slate-900 px-4 sm:px-6 py-2 rounded-full font-bold shadow-lg text-sm sm:text-base whitespace-nowrap">
                   GLUG X TechHub
                 </div>
               </div>
@@ -101,7 +163,7 @@ const Home = () => {
           <div className="hidden lg:flex fixed right-8 top-1/2 transform -translate-y-1/2 flex-col gap-4 z-40">
             <a
               href="#"
-              className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-amber-400 hover:scale-110 transition-all duration-300 group"
+              className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-[#BD9f67] hover:scale-110 transition-all duration-300 group"
             >
               <svg
                 className="w-5 h-5 text-white group-hover:text-slate-900"
@@ -113,7 +175,7 @@ const Home = () => {
             </a>
             <a
               href="#"
-              className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-amber-400 hover:scale-110 transition-all duration-300 group"
+              className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-[#BD9f67] hover:scale-110 transition-all duration-300 group"
             >
               <svg
                 className="w-5 h-5 text-white group-hover:text-slate-900"
@@ -125,7 +187,7 @@ const Home = () => {
             </a>
             <a
               href="#"
-              className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-amber-400 hover:scale-110 transition-all duration-300 group"
+              className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-[#BD9f67] hover:scale-110 transition-all duration-300 group"
             >
               <svg
                 className="w-5 h-5 text-white group-hover:text-slate-900"
@@ -137,7 +199,7 @@ const Home = () => {
             </a>
             <a
               href="#"
-              className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-amber-400 hover:scale-110 transition-all duration-300 group"
+              className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-[#BD9f67] hover:scale-110 transition-all duration-300 group"
             >
               <svg
                 className="w-5 h-5 text-white group-hover:text-slate-900"
@@ -149,7 +211,7 @@ const Home = () => {
             </a>
             <a
               href="#"
-              className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-amber-400 hover:scale-110 transition-all duration-300 group"
+              className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-[#BD9f67] hover:scale-110 transition-all duration-300 group"
             >
               <svg
                 className="w-5 h-5 text-white group-hover:text-slate-900"
@@ -170,7 +232,7 @@ const Home = () => {
 
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
             <svg
-              className="w-6 h-6 text-amber-400"
+              className="w-6 h-6 text-[#BD9f67]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -184,7 +246,41 @@ const Home = () => {
             </svg>
           </div>
         </div>
-      </main>
+      </section>
+
+      <section id="about" className="relative py-20 bg-white text-slate-900">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#BD9f67] mb-6">
+              What is Codeshack?
+            </h2>
+            <p className="text-base sm:text-lg max-w-4xl mx-auto leading-relaxed text-slate-700">
+              Codeshack at SMVIT helps hustling startups and young professionals
+              via dynamic workshops, thought-provoking speaker sessions,
+              high-stakes business plan competitions, and numerous other
+              game-changing initiatives throughout the year to create a crucible
+              for innovation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="join"
+        className="relative py-20 bg-linear-to-br from-slate-800 to-slate-900"
+      >
+        <div className="container mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#BD9f67] mb-6">
+            Ready to Join Us?
+          </h2>
+          <Link
+            to="/join"
+            className="inline-block bg-[#BD9f67] text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-[#A88A5C] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+          >
+            Join Now
+          </Link>
+        </div>
+      </section>
     </div>
   );
 };

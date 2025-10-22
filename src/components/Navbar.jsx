@@ -9,7 +9,6 @@ const Navbar = () => {
 
   const navLinks = [
     {path: "/", label: "HOME"},
-    {path: "/about", label: "ABOUT US"},
     {path: "/events", label: "EVENTS"},
     {path: "/gallery", label: "GALLERY"},
   ];
@@ -20,7 +19,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <div className="text-2xl font-bold">
-              <span className="text-amber-400">CODE</span>
+              <span className="text-[#BD9f67]">CODE</span>
               <span className="text-white">SHACK</span>
             </div>
           </Link>
@@ -32,8 +31,8 @@ const Navbar = () => {
                 to={link.path}
                 className={`transition-colors duration-300 ${
                   isActive(link.path)
-                    ? "text-amber-400"
-                    : "text-white hover:text-amber-400"
+                    ? "text-[#BD9f67]"
+                    : "text-white hover:text-[#BD9f67]"
                 }`}
               >
                 {link.label}
@@ -41,7 +40,7 @@ const Navbar = () => {
             ))}
             <Link
               to="/join"
-              className="bg-amber-400 text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-amber-500 transition-colors duration-300"
+              className="bg-[#BD9f67] text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-[#A88A5C] transition-colors duration-300"
             >
               JOIN US
             </Link>
@@ -98,8 +97,8 @@ const Navbar = () => {
                 to={link.path}
                 className={`transition-colors duration-300 py-2 ${
                   isActive(link.path)
-                    ? "text-amber-400"
-                    : "text-white hover:text-amber-400"
+                    ? "text-[#BD9f67]"
+                    : "text-white hover:text-[#BD9f67]"
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -108,7 +107,7 @@ const Navbar = () => {
             ))}
             <Link
               to="/join"
-              className="bg-amber-400 text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-amber-500 transition-colors duration-300 mt-2 text-center"
+              className="bg-[#BD9f67] text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-[#A88A5C] transition-colors duration-300 mt-2 text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
               JOIN US

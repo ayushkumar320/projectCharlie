@@ -27,7 +27,7 @@ const JoinUs = () => {
     <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white pt-24 pb-20">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-2xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-amber-400 mb-4 animate-fade-in text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#BD9f67] mb-4 animate-fade-in text-center">
             Join Us
           </h1>
           <p className="text-slate-300 text-center mb-8">
@@ -36,7 +36,7 @@ const JoinUs = () => {
 
           <form
             onSubmit={handleSubmit}
-            className="bg-slate-800/50 p-8 rounded-lg border border-amber-400/20"
+            className="bg-slate-800/50 p-8 rounded-lg border border-[#BD9f67]/20"
           >
             <div className="space-y-6">
               <div>
@@ -49,7 +49,7 @@ const JoinUs = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/20 transition-all duration-300 text-white"
+                  className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg focus:border-[#BD9f67] focus:outline-none focus:ring-2 focus:ring-[#BD9f67]/20 transition-all duration-300 text-white"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -64,7 +64,7 @@ const JoinUs = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/20 transition-all duration-300 text-white"
+                  className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg focus:border-[#BD9f67] focus:outline-none focus:ring-2 focus:ring-[#BD9f67]/20 transition-all duration-300 text-white"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -79,7 +79,7 @@ const JoinUs = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/20 transition-all duration-300 text-white"
+                  className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg focus:border-[#BD9f67] focus:outline-none focus:ring-2 focus:ring-[#BD9f67]/20 transition-all duration-300 text-white"
                   placeholder="+91 XXXXX XXXXX"
                 />
               </div>
@@ -94,7 +94,7 @@ const JoinUs = () => {
                     value={formData.branch}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/20 transition-all duration-300 text-white"
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg focus:border-[#BD9f67] focus:outline-none focus:ring-2 focus:ring-[#BD9f67]/20 transition-all duration-300 text-white"
                   >
                     <option value="">Select Branch</option>
                     <option value="CSE">Computer Science</option>
@@ -115,7 +115,7 @@ const JoinUs = () => {
                     value={formData.year}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/20 transition-all duration-300 text-white"
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg focus:border-[#BD9f67] focus:outline-none focus:ring-2 focus:ring-[#BD9f67]/20 transition-all duration-300 text-white"
                   >
                     <option value="">Select Year</option>
                     <option value="1">1st Year</option>
@@ -135,7 +135,7 @@ const JoinUs = () => {
                   value={formData.interest}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/20 transition-all duration-300 text-white"
+                  className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg focus:border-[#BD9f67] focus:outline-none focus:ring-2 focus:ring-[#BD9f67]/20 transition-all duration-300 text-white"
                 >
                   <option value="">Select Interest</option>
                   <option value="GLUG">GLUG (GNU/Linux Users Group)</option>
@@ -146,7 +146,7 @@ const JoinUs = () => {
 
               <button
                 type="submit"
-                className="w-full bg-amber-400 text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-500 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                className="w-full bg-[#BD9f67] text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-[#A88A5C] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
               >
                 Submit Application
               </button>
