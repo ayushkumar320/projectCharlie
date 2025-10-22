@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import {useShaderBackground} from "./ui/animated-shader-background";
+import Footer from "./Footer";
 
 const Home = () => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -566,25 +567,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section
-        id="join"
-        className="relative py-20 bg-linear-to-br from-slate-900/50 to-slate-950/50 backdrop-blur-xl"
-        style={{zIndex: 2}}
-      >
-        <div className="container mx-auto px-4 sm:px-6 text-center">
-          <div className="bg-slate-800/30 backdrop-blur-xl rounded-3xl p-12 border border-[#BD9f67]/20 shadow-2xl max-w-2xl mx-auto">
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#BD9f67] mb-6">
-              Ready to Join Us?
-            </h2>
-            <Link
-              to="/join"
-              className="inline-block bg-[#BD9f67]/90 backdrop-blur-md text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-[#BD9f67] transition-all duration-300 shadow-lg shadow-[#BD9f67]/20 hover:shadow-2xl hover:shadow-[#BD9f67]/40 hover:scale-105 border border-[#BD9f67]/50"
-            >
-              Join Now
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Footer />
     </div>
   );
 };
