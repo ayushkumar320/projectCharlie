@@ -1,0 +1,123 @@
+import React, {useState} from "react";
+import {Link, useLocation} from "react-router-dom";
+
+const Navbar = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
+
+  const navLinks = [
+    {path: "/", label: "HOME"},
+    {path: "/about", label: "ABOUT US"},
+    {path: "/events", label: "EVENTS"},
+    {path: "/gallery", label: "GALLERY"},
+  ];
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-sm border-b border-slate-700">
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-3">
+            <div className="text-2xl font-bold">
+              <span className="text-amber-400">Code</span>
+              <span className="text-white">shack</span>
+            </div>
+          </Link>
+
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`transition-colors duration-300 ${
+                  isActive(link.path)
+                    ? "text-amber-400"
+                    : "text-white hover:text-amber-400"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              to="/join"
+              className="bg-amber-400 text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-amber-500 transition-colors duration-300"
+            >
+              JOIN US
+            </Link>
+          </div>
+
+          <button
+            className="md:hidden text-white z-50"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            {mobileMenuOpen ? (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
+          </button>
+        </div>
+
+        <div
+          className={`md:hidden transition-all duration-300 ease-in-out ${
+            mobileMenuOpen
+              ? "max-h-96 opacity-100 mt-4"
+              : "max-h-0 opacity-0 overflow-hidden"
+          }`}
+        >
+          <div className="flex flex-col gap-4 py-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`transition-colors duration-300 py-2 ${
+                  isActive(link.path)
+                    ? "text-amber-400"
+                    : "text-white hover:text-amber-400"
+                }`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              to="/join"
+              className="bg-amber-400 text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-amber-500 transition-colors duration-300 mt-2 text-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              JOIN US
+            </Link>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
