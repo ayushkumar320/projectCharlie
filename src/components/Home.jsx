@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 
 const Home = () => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [flippedCards, setFlippedCards] = useState({});
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -14,6 +15,13 @@ const Home = () => {
 
   const handleLogoClick = () => {
     setIsFlipped(!isFlipped);
+  };
+
+  const handleCardClick = (cardId) => {
+    setFlippedCards((prev) => ({
+      ...prev,
+      [cardId]: !prev[cardId],
+    }));
   };
 
   return (
@@ -102,13 +110,13 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="hidden lg:flex fixed right-8 top-1/2 transform -translate-y-1/2 flex-col gap-4 z-40">
+          <div className="hidden lg:flex fixed right-0 top-1/2 transform -translate-y-1/2 flex-col z-40 bg-slate-900 rounded-l-2xl">
             <a
               href="#"
-              className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-[#BD9f67] hover:scale-110 transition-all duration-300 group"
+              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67] transition-all duration-300 group border-b border-slate-700"
             >
               <svg
-                className="w-5 h-5 text-white group-hover:text-slate-900"
+                className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -117,10 +125,10 @@ const Home = () => {
             </a>
             <a
               href="#"
-              className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-[#BD9f67] hover:scale-110 transition-all duration-300 group"
+              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67] transition-all duration-300 group border-b border-slate-700"
             >
               <svg
-                className="w-5 h-5 text-white group-hover:text-slate-900"
+                className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -129,10 +137,10 @@ const Home = () => {
             </a>
             <a
               href="#"
-              className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-[#BD9f67] hover:scale-110 transition-all duration-300 group"
+              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67] transition-all duration-300 group border-b border-slate-700"
             >
               <svg
-                className="w-5 h-5 text-white group-hover:text-slate-900"
+                className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -141,10 +149,10 @@ const Home = () => {
             </a>
             <a
               href="#"
-              className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-[#BD9f67] hover:scale-110 transition-all duration-300 group"
+              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67] transition-all duration-300 group border-b border-slate-700"
             >
               <svg
-                className="w-5 h-5 text-white group-hover:text-slate-900"
+                className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -153,21 +161,14 @@ const Home = () => {
             </a>
             <a
               href="#"
-              className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-[#BD9f67] hover:scale-110 transition-all duration-300 group"
+              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67] transition-all duration-300 group rounded-bl-2xl"
             >
               <svg
-                className="w-5 h-5 text-white group-hover:text-slate-900"
+                className="w-6 h-6 text-[#BD9f67] group-hover:text-slate-900"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                />
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.441 16.892c-2.102.144-6.784.144-8.883 0C5.282 16.736 5.017 15.622 5 12c.017-3.629.285-4.736 2.558-4.892 2.099-.144 6.782-.144 8.883 0C18.718 7.264 18.982 8.378 19 12c-.018 3.629-.285 4.736-2.559 4.892zM10 9.658l4.917 2.338L10 14.342V9.658z" />
               </svg>
             </a>
           </div>
@@ -291,172 +292,248 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Tech Vistara */}
-            <div className="group relative bg-slate-800 rounded-xl border-2 border-[#BD9f67]/40 overflow-hidden transition-all duration-300 cursor-pointer min-h-[200px]">
-              <div className="p-8 flex flex-col items-center justify-center">
-                <div className="mb-4">
-                  <svg
-                    className="w-16 h-16 text-[#BD9f67]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                    />
-                  </svg>
+            <div
+              className="group relative h-[280px] perspective-1000 cursor-pointer"
+              onClick={() => handleCardClick("techVistara")}
+            >
+              <div
+                className={`relative w-full h-full transition-transform duration-700 transform-style-3d md:group-hover:rotate-y-180 ${
+                  flippedCards.techVistara ? "rotate-y-180" : ""
+                }`}
+              >
+                {/* Front */}
+                <div className="absolute inset-0 bg-slate-800 rounded-2xl border-4 border-[#BD9f67]/60 p-8 backface-hidden flex flex-col items-center justify-center text-center">
+                  <div className="mb-6">
+                    <svg
+                      className="w-20 h-20 text-[#BD9f67]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#BD9f67]">
+                    Tech Vistara
+                  </h3>
                 </div>
-                <h3 className="text-xl font-bold text-[#BD9f67] text-center">
-                  Tech Vistara
-                </h3>
-                <p className="text-slate-300 text-center text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Annual orientation programme welcoming freshers to the
-                  technical community and club culture.
-                </p>
+                {/* Back */}
+                <div className="absolute inset-0 bg-[#BD9f67] rounded-2xl border-4 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center">
+                  <p className="text-slate-900 text-center text-base font-medium">
+                    Annual orientation programme welcoming freshers to the
+                    technical community and club culture.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Codeshack Summer of Code */}
-            <div className="group relative bg-slate-800 rounded-xl border-2 border-[#BD9f67]/40 overflow-hidden transition-all duration-300 cursor-pointer min-h-[200px]">
-              <div className="p-8 flex flex-col items-center justify-center">
-                <div className="mb-4">
-                  <svg
-                    className="w-16 h-16 text-[#BD9f67]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                    />
-                  </svg>
+            <div
+              className="group relative h-[280px] perspective-1000 cursor-pointer"
+              onClick={() => handleCardClick("csoc")}
+            >
+              <div
+                className={`relative w-full h-full transition-transform duration-700 transform-style-3d md:group-hover:rotate-y-180 ${
+                  flippedCards.csoc ? "rotate-y-180" : ""
+                }`}
+              >
+                {/* Front */}
+                <div className="absolute inset-0 bg-slate-800 rounded-2xl border-4 border-[#BD9f67]/60 p-8 backface-hidden flex flex-col items-center justify-center text-center">
+                  <div className="mb-6">
+                    <svg
+                      className="w-20 h-20 text-[#BD9f67]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#BD9f67]">CSOC</h3>
                 </div>
-                <h3 className="text-xl font-bold text-[#BD9f67] text-center">
-                  CSOC
-                </h3>
-                <p className="text-slate-300 text-center text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Codeshack Summer of Code - A month-long open source
-                  contribution program for students to learn and contribute.
-                </p>
+                {/* Back */}
+                <div className="absolute inset-0 bg-[#BD9f67] rounded-2xl border-4 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center">
+                  <p className="text-slate-900 text-center text-base font-medium">
+                    Codeshack Summer of Code - A month-long open source
+                    contribution program for students to learn and contribute.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Hacktoberfest */}
-            <div className="group relative bg-slate-800 rounded-xl border-2 border-[#BD9f67]/40 overflow-hidden transition-all duration-300 cursor-pointer min-h-[200px]">
-              <div className="p-8 flex flex-col items-center justify-center">
-                <div className="mb-4">
-                  <svg
-                    className="w-16 h-16 text-[#BD9f67]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                    />
-                  </svg>
+            <div
+              className="group relative h-[280px] perspective-1000 cursor-pointer"
+              onClick={() => handleCardClick("hacktoberfest")}
+            >
+              <div
+                className={`relative w-full h-full transition-transform duration-700 transform-style-3d md:group-hover:rotate-y-180 ${
+                  flippedCards.hacktoberfest ? "rotate-y-180" : ""
+                }`}
+              >
+                {/* Front */}
+                <div className="absolute inset-0 bg-slate-800 rounded-2xl border-4 border-[#BD9f67]/60 p-8 backface-hidden flex flex-col items-center justify-center text-center">
+                  <div className="mb-6">
+                    <svg
+                      className="w-20 h-20 text-[#BD9f67]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#BD9f67]">
+                    Hacktoberfest
+                  </h3>
                 </div>
-                <h3 className="text-xl font-bold text-[#BD9f67] text-center">
-                  Hacktoberfest
-                </h3>
-                <p className="text-slate-300 text-center text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Monthly guidance sessions and workshops helping students
-                  contribute to open source projects worldwide.
-                </p>
+                {/* Back */}
+                <div className="absolute inset-0 bg-[#BD9f67] rounded-2xl border-4 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center">
+                  <p className="text-slate-900 text-center text-base font-medium">
+                    Monthly guidance sessions and workshops helping students
+                    contribute to open source projects worldwide.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Workshop Series */}
-            <div className="group relative bg-slate-800 rounded-xl border-2 border-[#BD9f67]/40 overflow-hidden transition-all duration-300 cursor-pointer min-h-[200px]">
-              <div className="p-8 flex flex-col items-center justify-center">
-                <div className="mb-4">
-                  <svg
-                    className="w-16 h-16 text-[#BD9f67]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
+            <div
+              className="group relative h-[280px] perspective-1000 cursor-pointer"
+              onClick={() => handleCardClick("workshop")}
+            >
+              <div
+                className={`relative w-full h-full transition-transform duration-700 transform-style-3d md:group-hover:rotate-y-180 ${
+                  flippedCards.workshop ? "rotate-y-180" : ""
+                }`}
+              >
+                {/* Front */}
+                <div className="absolute inset-0 bg-slate-800 rounded-2xl border-4 border-[#BD9f67]/60 p-8 backface-hidden flex flex-col items-center justify-center text-center">
+                  <div className="mb-6">
+                    <svg
+                      className="w-20 h-20 text-[#BD9f67]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#BD9f67]">
+                    Workshop Series
+                  </h3>
                 </div>
-                <h3 className="text-xl font-bold text-[#BD9f67] text-center">
-                  Workshop Series
-                </h3>
-                <p className="text-slate-300 text-center text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Regular hands-on workshops on latest technologies, tools, and
-                  frameworks led by industry experts.
-                </p>
+                {/* Back */}
+                <div className="absolute inset-0 bg-[#BD9f67] rounded-2xl border-4 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center">
+                  <p className="text-slate-900 text-center text-base font-medium">
+                    Regular hands-on workshops on latest technologies, tools,
+                    and frameworks led by industry experts.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Hackathons */}
-            <div className="group relative bg-slate-800 rounded-xl border-2 border-[#BD9f67]/40 overflow-hidden transition-all duration-300 cursor-pointer min-h-[200px]">
-              <div className="p-8 flex flex-col items-center justify-center">
-                <div className="mb-4">
-                  <svg
-                    className="w-16 h-16 text-[#BD9f67]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
+            <div
+              className="group relative h-[280px] perspective-1000 cursor-pointer"
+              onClick={() => handleCardClick("hackathons")}
+            >
+              <div
+                className={`relative w-full h-full transition-transform duration-700 transform-style-3d md:group-hover:rotate-y-180 ${
+                  flippedCards.hackathons ? "rotate-y-180" : ""
+                }`}
+              >
+                {/* Front */}
+                <div className="absolute inset-0 bg-slate-800 rounded-2xl border-4 border-[#BD9f67]/60 p-8 backface-hidden flex flex-col items-center justify-center text-center">
+                  <div className="mb-6">
+                    <svg
+                      className="w-20 h-20 text-[#BD9f67]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#BD9f67]">
+                    Hackathons
+                  </h3>
                 </div>
-                <h3 className="text-xl font-bold text-[#BD9f67] text-center">
-                  Hackathons
-                </h3>
-                <p className="text-slate-300 text-center text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Active Hackathons throughout the year encouraging innovation
-                  and problem-solving among participants.
-                </p>
+                {/* Back */}
+                <div className="absolute inset-0 bg-[#BD9f67] rounded-2xl border-4 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center">
+                  <p className="text-slate-900 text-center text-base font-medium">
+                    Active Hackathons throughout the year encouraging innovation
+                    and problem-solving among participants.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Tech Talks */}
-            <div className="group relative bg-slate-800 rounded-xl border-2 border-[#BD9f67]/40 overflow-hidden transition-all duration-300 cursor-pointer min-h-[200px]">
-              <div className="p-8 flex flex-col items-center justify-center">
-                <div className="mb-4">
-                  <svg
-                    className="w-16 h-16 text-[#BD9f67]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
-                    />
-                  </svg>
+            <div
+              className="group relative h-[280px] perspective-1000 cursor-pointer"
+              onClick={() => handleCardClick("techTalks")}
+            >
+              <div
+                className={`relative w-full h-full transition-transform duration-700 transform-style-3d md:group-hover:rotate-y-180 ${
+                  flippedCards.techTalks ? "rotate-y-180" : ""
+                }`}
+              >
+                {/* Front */}
+                <div className="absolute inset-0 bg-slate-800 rounded-2xl border-4 border-[#BD9f67]/60 p-8 backface-hidden flex flex-col items-center justify-center text-center">
+                  <div className="mb-6">
+                    <svg
+                      className="w-20 h-20 text-[#BD9f67]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#BD9f67]">
+                    Tech Talks
+                  </h3>
                 </div>
-                <h3 className="text-xl font-bold text-[#BD9f67] text-center">
-                  Tech Talks
-                </h3>
-                <p className="text-slate-300 text-center text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Engaging speaker sessions with industry leaders sharing
-                  insights on cutting-edge technologies and trends.
-                </p>
+                {/* Back */}
+                <div className="absolute inset-0 bg-[#BD9f67] rounded-2xl border-4 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center">
+                  <p className="text-slate-900 text-center text-base font-medium">
+                    Engaging speaker sessions with industry leaders sharing
+                    insights on cutting-edge technologies and trends.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
