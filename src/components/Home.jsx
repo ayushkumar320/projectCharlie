@@ -223,78 +223,9 @@ const Home = () => {
       </section>
 
       {/* What is Codeshack - Lamp Section */}
-      <div id="about" style={{zIndex: 2}} className="relative">
+      <div id="about" style={{zIndex: 5}} className="relative z-30">
         <WhatIsCodeshackLamp />
       </div>
-
-      <section
-        className="relative py-16 bg-linear-to-r from-slate-900/50 via-slate-800/50 to-slate-900/50 backdrop-blur-xl"
-        style={{zIndex: 2}}
-      >
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="text-center bg-slate-800/30 backdrop-blur-xl rounded-2xl p-8 border border-[#BD9f67]/20 hover:border-[#BD9f67]/40 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl hover:shadow-[#BD9f67]/20">
-              <div className="flex justify-center mb-4">
-                <svg
-                  className="w-16 h-16 text-[#BD9f67]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </div>
-              <div className="text-4xl font-bold text-[#BD9f67] mb-2">50+</div>
-              <div className="text-slate-300 text-lg">Active Members</div>
-            </div>
-
-            <div className="text-center bg-slate-800/30 backdrop-blur-xl rounded-2xl p-8 border border-[#BD9f67]/20 hover:border-[#BD9f67]/40 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl hover:shadow-[#BD9f67]/20">
-              <div className="flex justify-center mb-4">
-                <svg
-                  className="w-16 h-16 text-[#BD9f67]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-              <div className="text-4xl font-bold text-[#BD9f67] mb-2">50+</div>
-              <div className="text-slate-300 text-lg">Events Conducted</div>
-            </div>
-
-            <div className="text-center bg-slate-800/30 backdrop-blur-xl rounded-2xl p-8 border border-[#BD9f67]/20 hover:border-[#BD9f67]/40 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl hover:shadow-[#BD9f67]/20">
-              <div className="flex justify-center mb-4">
-                <svg
-                  className="w-16 h-16 text-[#BD9f67]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <div className="text-4xl font-bold text-[#BD9f67] mb-2">5+</div>
-              <div className="text-slate-300 text-lg">Years of Excellence</div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Our Initiatives Section */}
       <section
@@ -326,32 +257,36 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 bg-slate-800/40 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67]/30 p-8 backface-hidden flex flex-col items-center justify-center text-center shadow-xl hover:border-[#BD9f67]/50 transition-all duration-300">
-                  <div className="mb-6">
-                    <svg
-                      className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                      />
-                    </svg>
+                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
+                  <div className="h-full w-full bg-slate-900/60 backdrop-blur-xl rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-xl hover:shadow-2xl">
+                    <div className="mb-6">
+                      <svg
+                        className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-bold text-[#BD9f67]">
+                      Tech Vistara
+                    </h3>
                   </div>
-                  <h3 className="text-2xl font-bold text-[#BD9f67]">
-                    Tech Vistara
-                  </h3>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 bg-[#BD9f67]/90 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
-                  <p className="text-slate-900 text-center text-base font-medium">
-                    Annual orientation programme welcoming freshers to the
-                    technical community and club culture.
-                  </p>
+                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
+                  <div className="h-full w-full rounded-2xl bg-[#BD9f67]/90 backdrop-blur-xl p-8 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
+                    <p className="text-slate-900 text-center text-base font-medium">
+                      Annual orientation programme welcoming freshers to the
+                      technical community and club culture.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -367,30 +302,34 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 bg-slate-800/40 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67]/30 p-8 backface-hidden flex flex-col items-center justify-center text-center shadow-xl hover:border-[#BD9f67]/50 transition-all duration-300">
-                  <div className="mb-6">
-                    <svg
-                      className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                      />
-                    </svg>
+                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
+                  <div className="h-full w-full bg-slate-900/60 backdrop-blur-xl rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-xl hover:shadow-2xl">
+                    <div className="mb-6">
+                      <svg
+                        className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-bold text-[#BD9f67]">CSOC</h3>
                   </div>
-                  <h3 className="text-2xl font-bold text-[#BD9f67]">CSOC</h3>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 bg-[#BD9f67]/90 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
-                  <p className="text-slate-900 text-center text-base font-medium">
-                    Codeshack Summer of Code - A month-long open source
-                    contribution program for students to learn and contribute.
-                  </p>
+                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
+                  <div className="h-full w-full rounded-2xl bg-[#BD9f67]/90 backdrop-blur-xl p-8 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
+                    <p className="text-slate-900 text-center text-base font-medium">
+                      Codeshack Summer of Code - A month-long open source
+                      contribution program for students to learn and contribute.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -406,32 +345,36 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 bg-slate-800/40 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67]/30 p-8 backface-hidden flex flex-col items-center justify-center text-center shadow-xl hover:border-[#BD9f67]/50 transition-all duration-300">
-                  <div className="mb-6">
-                    <svg
-                      className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                      />
-                    </svg>
+                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
+                  <div className="h-full w-full bg-slate-900/60 backdrop-blur-xl rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-xl hover:shadow-2xl">
+                    <div className="mb-6">
+                      <svg
+                        className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-bold text-[#BD9f67]">
+                      Hacktoberfest
+                    </h3>
                   </div>
-                  <h3 className="text-2xl font-bold text-[#BD9f67]">
-                    Hacktoberfest
-                  </h3>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 bg-[#BD9f67]/90 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
-                  <p className="text-slate-900 text-center text-base font-medium">
-                    Monthly guidance sessions and workshops helping students
-                    contribute to open source projects worldwide.
-                  </p>
+                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
+                  <div className="h-full w-full rounded-2xl bg-[#BD9f67]/90 backdrop-blur-xl p-8 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
+                    <p className="text-slate-900 text-center text-base font-medium">
+                      Monthly guidance sessions and workshops helping students
+                      contribute to open source projects worldwide.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -447,32 +390,36 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 bg-slate-800/40 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67]/30 p-8 backface-hidden flex flex-col items-center justify-center text-center shadow-xl hover:border-[#BD9f67]/50 transition-all duration-300">
-                  <div className="mb-6">
-                    <svg
-                      className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
+                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
+                  <div className="h-full w-full bg-slate-900/60 backdrop-blur-xl rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-xl hover:shadow-2xl">
+                    <div className="mb-6">
+                      <svg
+                        className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-bold text-[#BD9f67]">
+                      Workshop Series
+                    </h3>
                   </div>
-                  <h3 className="text-2xl font-bold text-[#BD9f67]">
-                    Workshop Series
-                  </h3>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 bg-[#BD9f67]/90 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
-                  <p className="text-slate-900 text-center text-base font-medium">
-                    Regular hands-on workshops on latest technologies, tools,
-                    and frameworks led by industry experts.
-                  </p>
+                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
+                  <div className="h-full w-full rounded-2xl bg-[#BD9f67]/90 backdrop-blur-xl p-8 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
+                    <p className="text-slate-900 text-center text-base font-medium">
+                      Regular hands-on workshops on latest technologies, tools,
+                      and frameworks led by industry experts.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -488,32 +435,36 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 bg-slate-800/40 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67]/30 p-8 backface-hidden flex flex-col items-center justify-center text-center shadow-xl hover:border-[#BD9f67]/50 transition-all duration-300">
-                  <div className="mb-6">
-                    <svg
-                      className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
+                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
+                  <div className="h-full w-full bg-slate-900/60 backdrop-blur-xl rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-xl hover:shadow-2xl">
+                    <div className="mb-6">
+                      <svg
+                        className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-bold text-[#BD9f67]">
+                      Hackathons
+                    </h3>
                   </div>
-                  <h3 className="text-2xl font-bold text-[#BD9f67]">
-                    Hackathons
-                  </h3>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 bg-[#BD9f67]/90 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
-                  <p className="text-slate-900 text-center text-base font-medium">
-                    Active Hackathons throughout the year encouraging innovation
-                    and problem-solving among participants.
-                  </p>
+                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
+                  <div className="h-full w-full rounded-2xl bg-[#BD9f67]/90 backdrop-blur-xl p-8 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
+                    <p className="text-slate-900 text-center text-base font-medium">
+                      Active Hackathons throughout the year encouraging
+                      innovation and problem-solving among participants.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -529,32 +480,36 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 bg-slate-800/40 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67]/30 p-8 backface-hidden flex flex-col items-center justify-center text-center shadow-xl hover:border-[#BD9f67]/50 transition-all duration-300">
-                  <div className="mb-6">
-                    <svg
-                      className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
-                      />
-                    </svg>
+                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
+                  <div className="h-full w-full bg-slate-900/60 backdrop-blur-xl rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-xl hover:shadow-2xl">
+                    <div className="mb-6">
+                      <svg
+                        className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-bold text-[#BD9f67]">
+                      Tech Talks
+                    </h3>
                   </div>
-                  <h3 className="text-2xl font-bold text-[#BD9f67]">
-                    Tech Talks
-                  </h3>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 bg-[#BD9f67]/90 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
-                  <p className="text-slate-900 text-center text-base font-medium">
-                    Engaging speaker sessions with industry leaders sharing
-                    insights on cutting-edge technologies and trends.
-                  </p>
+                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
+                  <div className="h-full w-full rounded-2xl bg-[#BD9f67]/90 backdrop-blur-xl p-8 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
+                    <p className="text-slate-900 text-center text-base font-medium">
+                      Engaging speaker sessions with industry leaders sharing
+                      insights on cutting-edge technologies and trends.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
