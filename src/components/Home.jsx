@@ -3,12 +3,11 @@ import {Link} from "react-router-dom";
 
 const Home = () => {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [hoveredInitiative, setHoveredInitiative] = useState(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIsFlipped((prev) => !prev);
-    }, 10000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -16,63 +15,6 @@ const Home = () => {
   const handleLogoClick = () => {
     setIsFlipped(!isFlipped);
   };
-
-  const initiatives = [
-    {
-      id: 1,
-      title: "Tech Vistara",
-      icon: "🎯",
-      description:
-        "An annual technical fest featuring hackathons, workshops, and competitions to showcase innovation and technical prowess.",
-      expanded:
-        "Tech Vistara is our flagship annual technical festival that brings together students, professionals, and tech enthusiasts. It features multiple tracks including hackathons, coding competitions, tech talks, and hands-on workshops covering emerging technologies.",
-    },
-    {
-      id: 2,
-      title: "CSOC",
-      icon: "💻",
-      description:
-        "Codeshack Summer of Code - A mentorship program for students to contribute to open-source projects.",
-      expanded:
-        "CSOC is an intensive summer program designed to introduce students to open-source development. Participants work on real-world projects under the guidance of experienced mentors, learning industry best practices and contributing to the open-source community.",
-    },
-    {
-      id: 3,
-      title: "Eureka!",
-      icon: "💡",
-      description:
-        "An International Business Model competition with prizes and incentives worth more than 1.2 crore INR.",
-      expanded:
-        "Eureka! is regarded as Asia's largest B-Model Competition by CNN. It provides a platform for aspiring entrepreneurs to showcase their innovative business ideas and compete for substantial prizes while receiving mentorship from industry leaders.",
-    },
-    {
-      id: 4,
-      title: "Illuminate",
-      icon: "✨",
-      description:
-        "Workshop series focusing on emerging technologies and skill development for students.",
-      expanded:
-        "Illuminate is a comprehensive workshop series that covers cutting-edge technologies including AI/ML, Web Development, Cloud Computing, and more. These hands-on sessions are designed to bridge the gap between academic learning and industry requirements.",
-    },
-    {
-      id: 5,
-      title: "Campus Ambassador",
-      icon: "🎓",
-      description:
-        "Leadership program to represent Codeshack across different colleges and institutions.",
-      expanded:
-        "Our Campus Ambassador program creates a network of student leaders who represent Codeshack values and initiatives. Ambassadors gain leadership experience, networking opportunities, and exclusive access to events and resources.",
-    },
-    {
-      id: 6,
-      title: "EnB Club",
-      icon: "🚀",
-      description:
-        "Entrepreneurship and Business Club promoting startup culture and business acumen.",
-      expanded:
-        "EnB Club at IIT Bombay focuses on fostering entrepreneurship and business skills among students. It organizes startup competitions, business plan workshops, and provides mentorship for budding entrepreneurs.",
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-x-hidden">
@@ -268,8 +210,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Statistics Section */}
-      <section className="relative py-16 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800">
+      <section className="relative py-16 bg-linear-to-r from-slate-800 via-slate-700 to-slate-800">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="text-center">
@@ -288,7 +229,7 @@ const Home = () => {
                   />
                 </svg>
               </div>
-              <div className="text-4xl font-bold text-[#BD9f67] mb-2">100+</div>
+              <div className="text-4xl font-bold text-[#BD9f67] mb-2">50+</div>
               <div className="text-slate-300 text-lg">Active Members</div>
             </div>
 
@@ -352,99 +293,171 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Tech Vistara */}
-            <div className="bg-slate-800 p-6 rounded-lg border-2 border-[#BD9f67]/30 hover:border-[#BD9f67] hover:scale-105 transition-all duration-300 group cursor-pointer">
-              <div className="flex items-center justify-center mb-4">
-                <div className="w-16 h-16 bg-[#BD9f67]/20 rounded-lg flex items-center justify-center group-hover:bg-[#BD9f67]/30 transition-colors duration-300">
-                  <span className="text-3xl">🚀</span>
+            <div className="group relative bg-slate-800 rounded-xl border-2 border-[#BD9f67]/40 overflow-hidden transition-all duration-300 cursor-pointer min-h-[200px]">
+              <div className="p-8 flex flex-col items-center justify-center">
+                <div className="mb-4">
+                  <svg
+                    className="w-16 h-16 text-[#BD9f67]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                    />
+                  </svg>
                 </div>
+                <h3 className="text-xl font-bold text-[#BD9f67] text-center">
+                  Tech Vistara
+                </h3>
+                <p className="text-slate-300 text-center text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Annual orientation programme welcoming freshers to the
+                  technical community and club culture.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-[#BD9f67] mb-3 text-center">
-                Tech Vistara
-              </h3>
-              <p className="text-slate-300 text-center text-sm">
-                Annual technical fest featuring hackathons, workshops, and
-                competitions showcasing innovation and creativity.
-              </p>
             </div>
 
             {/* Codeshack Summer of Code */}
-            <div className="bg-slate-800 p-6 rounded-lg border-2 border-[#BD9f67]/30 hover:border-[#BD9f67] hover:scale-105 transition-all duration-300 group cursor-pointer">
-              <div className="flex items-center justify-center mb-4">
-                <div className="w-16 h-16 bg-[#BD9f67]/20 rounded-lg flex items-center justify-center group-hover:bg-[#BD9f67]/30 transition-colors duration-300">
-                  <span className="text-3xl">☀️</span>
+            <div className="group relative bg-slate-800 rounded-xl border-2 border-[#BD9f67]/40 overflow-hidden transition-all duration-300 cursor-pointer min-h-[200px]">
+              <div className="p-8 flex flex-col items-center justify-center">
+                <div className="mb-4">
+                  <svg
+                    className="w-16 h-16 text-[#BD9f67]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  </svg>
                 </div>
+                <h3 className="text-xl font-bold text-[#BD9f67] text-center">
+                  CSOC
+                </h3>
+                <p className="text-slate-300 text-center text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Codeshack Summer of Code - A month-long open source
+                  contribution program for students to learn and contribute.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-[#BD9f67] mb-3 text-center">
-                CSOC
-              </h3>
-              <p className="text-slate-300 text-center text-sm">
-                Codeshack Summer of Code - A month-long open source contribution
-                program for students to learn and contribute.
-              </p>
             </div>
 
             {/* Hacktoberfest */}
-            <div className="bg-slate-800 p-6 rounded-lg border-2 border-[#BD9f67]/30 hover:border-[#BD9f67] hover:scale-105 transition-all duration-300 group cursor-pointer">
-              <div className="flex items-center justify-center mb-4">
-                <div className="w-16 h-16 bg-[#BD9f67]/20 rounded-lg flex items-center justify-center group-hover:bg-[#BD9f67]/30 transition-colors duration-300">
-                  <span className="text-3xl">🎃</span>
+            <div className="group relative bg-slate-800 rounded-xl border-2 border-[#BD9f67]/40 overflow-hidden transition-all duration-300 cursor-pointer min-h-[200px]">
+              <div className="p-8 flex flex-col items-center justify-center">
+                <div className="mb-4">
+                  <svg
+                    className="w-16 h-16 text-[#BD9f67]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                    />
+                  </svg>
                 </div>
+                <h3 className="text-xl font-bold text-[#BD9f67] text-center">
+                  Hacktoberfest
+                </h3>
+                <p className="text-slate-300 text-center text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Monthly guidance sessions and workshops helping students
+                  contribute to open source projects worldwide.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-[#BD9f67] mb-3 text-center">
-                Hacktoberfest
-              </h3>
-              <p className="text-slate-300 text-center text-sm">
-                Monthly guidance sessions and workshops helping students
-                contribute to open source projects worldwide.
-              </p>
             </div>
 
             {/* Workshop Series */}
-            <div className="bg-slate-800 p-6 rounded-lg border-2 border-[#BD9f67]/30 hover:border-[#BD9f67] hover:scale-105 transition-all duration-300 group cursor-pointer">
-              <div className="flex items-center justify-center mb-4">
-                <div className="w-16 h-16 bg-[#BD9f67]/20 rounded-lg flex items-center justify-center group-hover:bg-[#BD9f67]/30 transition-colors duration-300">
-                  <span className="text-3xl">💻</span>
+            <div className="group relative bg-slate-800 rounded-xl border-2 border-[#BD9f67]/40 overflow-hidden transition-all duration-300 cursor-pointer min-h-[200px]">
+              <div className="p-8 flex flex-col items-center justify-center">
+                <div className="mb-4">
+                  <svg
+                    className="w-16 h-16 text-[#BD9f67]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
                 </div>
+                <h3 className="text-xl font-bold text-[#BD9f67] text-center">
+                  Workshop Series
+                </h3>
+                <p className="text-slate-300 text-center text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Regular hands-on workshops on latest technologies, tools, and
+                  frameworks led by industry experts.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-[#BD9f67] mb-3 text-center">
-                Workshop Series
-              </h3>
-              <p className="text-slate-300 text-center text-sm">
-                Regular hands-on workshops on latest technologies, tools, and
-                frameworks led by industry experts.
-              </p>
             </div>
 
-            {/* Code Nights */}
-            <div className="bg-slate-800 p-6 rounded-lg border-2 border-[#BD9f67]/30 hover:border-[#BD9f67] hover:scale-105 transition-all duration-300 group cursor-pointer">
-              <div className="flex items-center justify-center mb-4">
-                <div className="w-16 h-16 bg-[#BD9f67]/20 rounded-lg flex items-center justify-center group-hover:bg-[#BD9f67]/30 transition-colors duration-300">
-                  <span className="text-3xl">🌙</span>
+            {/* Hackathons */}
+            <div className="group relative bg-slate-800 rounded-xl border-2 border-[#BD9f67]/40 overflow-hidden transition-all duration-300 cursor-pointer min-h-[200px]">
+              <div className="p-8 flex flex-col items-center justify-center">
+                <div className="mb-4">
+                  <svg
+                    className="w-16 h-16 text-[#BD9f67]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
                 </div>
+                <h3 className="text-xl font-bold text-[#BD9f67] text-center">
+                  Hackathons
+                </h3>
+                <p className="text-slate-300 text-center text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Active Hackathons throughout the year encouraging innovation
+                  and problem-solving among participants.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-[#BD9f67] mb-3 text-center">
-                Code Nights
-              </h3>
-              <p className="text-slate-300 text-center text-sm">
-                Overnight coding marathons where students collaborate on
-                projects and solve real-world problems.
-              </p>
             </div>
 
             {/* Tech Talks */}
-            <div className="bg-slate-800 p-6 rounded-lg border-2 border-[#BD9f67]/30 hover:border-[#BD9f67] hover:scale-105 transition-all duration-300 group cursor-pointer">
-              <div className="flex items-center justify-center mb-4">
-                <div className="w-16 h-16 bg-[#BD9f67]/20 rounded-lg flex items-center justify-center group-hover:bg-[#BD9f67]/30 transition-colors duration-300">
-                  <span className="text-3xl">🎤</span>
+            <div className="group relative bg-slate-800 rounded-xl border-2 border-[#BD9f67]/40 overflow-hidden transition-all duration-300 cursor-pointer min-h-[200px]">
+              <div className="p-8 flex flex-col items-center justify-center">
+                <div className="mb-4">
+                  <svg
+                    className="w-16 h-16 text-[#BD9f67]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                    />
+                  </svg>
                 </div>
+                <h3 className="text-xl font-bold text-[#BD9f67] text-center">
+                  Tech Talks
+                </h3>
+                <p className="text-slate-300 text-center text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Engaging speaker sessions with industry leaders sharing
+                  insights on cutting-edge technologies and trends.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-[#BD9f67] mb-3 text-center">
-                Tech Talks
-              </h3>
-              <p className="text-slate-300 text-center text-sm">
-                Engaging speaker sessions with industry leaders sharing insights
-                on cutting-edge technologies and trends.
-              </p>
             </div>
           </div>
         </div>
