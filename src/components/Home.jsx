@@ -113,9 +113,9 @@ const Home = () => {
       <section
         id="hero"
         className="relative pt-24 pb-20 min-h-screen flex items-center"
-        style={{zIndex: 2}}
+        style={{zIndex: 3}}
       >
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 min-h-[80vh]">
             <div className="flex-1 space-y-4 sm:space-y-6 max-w-2xl text-center lg:text-left">
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight animate-fade-in">
@@ -223,9 +223,9 @@ const Home = () => {
       </section>
 
       {/* What is Codeshack - Lamp Section */}
-      <div id="about" style={{zIndex: 2}} className="relative">
+      <section id="about" className="relative" style={{zIndex: 2}}>
         <WhatIsCodeshackLamp />
-      </div>
+      </section>
 
       {/* Our Initiatives Section */}
       <section
@@ -257,7 +257,7 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
+                <div className="absolute inset-0 rounded-2xl p-px backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
                   <div className="h-full w-full bg-slate-900/60 backdrop-blur-xl rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-xl hover:shadow-2xl">
                     <div className="mb-6">
                       <svg
@@ -280,7 +280,7 @@ const Home = () => {
                   </div>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
+                <div className="absolute inset-0 rounded-2xl p-px backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
                   <div className="h-full w-full rounded-2xl bg-[#BD9f67]/90 backdrop-blur-xl p-8 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
                     <p className="text-slate-900 text-center text-base font-medium">
                       Annual orientation programme welcoming freshers to the
@@ -302,7 +302,7 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
+                <div className="absolute inset-0 rounded-2xl p-px backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
                   <div className="h-full w-full bg-slate-900/60 backdrop-blur-xl rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-xl hover:shadow-2xl">
                     <div className="mb-6">
                       <svg
@@ -323,7 +323,7 @@ const Home = () => {
                   </div>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
+                <div className="absolute inset-0 rounded-2xl p-px backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
                   <div className="h-full w-full rounded-2xl bg-[#BD9f67]/90 backdrop-blur-xl p-8 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
                     <p className="text-slate-900 text-center text-base font-medium">
                       Codeshack Summer of Code - A month-long open source
@@ -345,7 +345,7 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
+                <div className="absolute inset-0 rounded-2xl p-px backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
                   <div className="h-full w-full bg-slate-900/60 backdrop-blur-xl rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-xl hover:shadow-2xl">
                     <div className="mb-6">
                       <svg
@@ -368,7 +368,7 @@ const Home = () => {
                   </div>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
+                <div className="absolute inset-0 rounded-2xl p-px backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
                   <div className="h-full w-full rounded-2xl bg-[#BD9f67]/90 backdrop-blur-xl p-8 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
                     <p className="text-slate-900 text-center text-base font-medium">
                       Monthly guidance sessions and workshops helping students
@@ -390,7 +390,7 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
+                <div className="absolute inset-0 rounded-2xl p-px backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
                   <div className="h-full w-full bg-slate-900/60 backdrop-blur-xl rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-xl hover:shadow-2xl">
                     <div className="mb-6">
                       <svg
@@ -413,7 +413,7 @@ const Home = () => {
                   </div>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
+                <div className="absolute inset-0 rounded-2xl p-px backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
                   <div className="h-full w-full rounded-2xl bg-[#BD9f67]/90 backdrop-blur-xl p-8 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
                     <p className="text-slate-900 text-center text-base font-medium">
                       Regular hands-on workshops on latest technologies, tools,
@@ -435,7 +435,7 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
+                <div className="absolute inset-0 rounded-2xl p-px backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
                   <div className="h-full w-full bg-slate-900/60 backdrop-blur-xl rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-xl hover:shadow-2xl">
                     <div className="mb-6">
                       <svg
@@ -458,7 +458,7 @@ const Home = () => {
                   </div>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
+                <div className="absolute inset-0 rounded-2xl p-px backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
                   <div className="h-full w-full rounded-2xl bg-[#BD9f67]/90 backdrop-blur-xl p-8 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
                     <p className="text-slate-900 text-center text-base font-medium">
                       Active Hackathons throughout the year encouraging
@@ -480,7 +480,7 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
+                <div className="absolute inset-0 rounded-2xl p-px backface-hidden bg-linear-to-r from-[#BD9f67]/40 via-[#BD9f67]/10 to-transparent transition-all duration-300 shadow-[0_0_0_1px_rgba(189,159,103,0.15)] hover:shadow-[0_0_0_1px_rgba(189,159,103,0.35)]">
                   <div className="h-full w-full bg-slate-900/60 backdrop-blur-xl rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-xl hover:shadow-2xl">
                     <div className="mb-6">
                       <svg
@@ -503,7 +503,7 @@ const Home = () => {
                   </div>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 rounded-2xl p-[1px] backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
+                <div className="absolute inset-0 rounded-2xl p-px backface-hidden rotate-y-180 bg-linear-to-r from-[#BD9f67]/60 via-[#BD9f67]/30 to-[#BD9f67]/10 shadow-[0_0_0_1px_rgba(189,159,103,0.25)]">
                   <div className="h-full w-full rounded-2xl bg-[#BD9f67]/90 backdrop-blur-xl p-8 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
                     <p className="text-slate-900 text-center text-base font-medium">
                       Engaging speaker sessions with industry leaders sharing
