@@ -1,5 +1,5 @@
 import React from "react";
-import TimelineDemo from "./ui/timeline-demo";
+import TimelineDemo from "./ui/timeline-demo.jsx";
 import { useShaderBackground } from "./ui/animated-shader-background";
 import Footer from "./Footer";
 

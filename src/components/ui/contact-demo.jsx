@@ -1,4 +1,4 @@
-import { Contact2 } from "@/components/ui/contact-2";
+import { Contact2 } from "@/components/ui/contact-2.jsx";
 
 const DemoOne = () => {
   return (

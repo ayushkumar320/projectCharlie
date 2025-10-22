@@ -2,32 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-export interface TimelineEvent {
-  id: string;
-  date: string;
-  title: string;
-  description: string;
-  icon?: React.ReactNode;
-  image?: string;
-  category?: string;
-  color?: string;
-  link?: {
-    url: string;
-    text: string;
-  };
-}
-
-interface Timeline3DProps {
-  events: TimelineEvent[];
-  backgroundColor?: string;
-  primaryColor?: string;
-  secondaryColor?: string;
-  textColor?: string;
-  accentColor?: string;
-  showImages?: boolean;
-  className?: string;
-}
-
 const defaultColors = {
   background: 'bg-slate-900',
   primary: 'bg-indigo-600',
@@ -36,7 +10,7 @@ const defaultColors = {
   accent: 'bg-emerald-500',
 };
 
-export const Timeline3D: React.FC<Timeline3DProps> = ({
+export const Timeline3D = ({
   events,
   backgroundColor = defaultColors.background,
   primaryColor = defaultColors.primary,
@@ -46,10 +20,10 @@ export const Timeline3D: React.FC<Timeline3DProps> = ({
   showImages = true,
   className = '',
 }) => {
-  const [activeEvent, setActiveEvent] = useState<string | null>(null);
+  const [activeEvent, setActiveEvent] = useState(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('down');
+  const containerRef = useRef(null);
+  const [scrollDirection, setScrollDirection] = useState('down');
   const [lastScrollTop, setLastScrollTop] = useState(0);
 
   useEffect(() => {
@@ -64,7 +38,7 @@ export const Timeline3D: React.FC<Timeline3DProps> = ({
   }, [lastScrollTop]);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e) => {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
       setMousePosition({

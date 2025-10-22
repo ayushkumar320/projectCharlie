@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 const Footer = () => {
   return (
     <footer
-      className="relative bg-slate-900/80 backdrop-blur-xl border-t border-[#BD9f67]/20"
+      className="relative bg-transparent backdrop-blur-md border-t border-[#BD9f67]/20"
       style={{zIndex: 2}}
     >
       <div className="container mx-auto px-4 sm:px-6 py-16">
@@ -28,7 +28,7 @@ const Footer = () => {
             <div className="flex gap-4 pt-4">
               <a
                 href="#"
-                className="w-10 h-10 bg-slate-800/50 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-[#BD9f67]/80 transition-all duration-300 group border border-slate-700/50"
+                className="w-10 h-10 bg-slate-800/20 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-[#BD9f67]/80 transition-all duration-300 group border border-[#BD9f67]/20"
               >
                 <svg
                   className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900 transition-colors"
@@ -40,7 +40,7 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-slate-800/50 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-[#BD9f67]/80 transition-all duration-300 group border border-slate-700/50"
+                className="w-10 h-10 bg-slate-800/20 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-[#BD9f67]/80 transition-all duration-300 group border border-[#BD9f67]/20"
               >
                 <svg
                   className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900 transition-colors"
@@ -52,7 +52,7 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-slate-800/50 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-[#BD9f67]/80 transition-all duration-300 group border border-slate-700/50"
+                className="w-10 h-10 bg-slate-800/20 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-[#BD9f67]/80 transition-all duration-300 group border border-[#BD9f67]/20"
               >
                 <svg
                   className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900 transition-colors"
@@ -64,7 +64,7 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-slate-800/50 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-[#BD9f67]/80 transition-all duration-300 group border border-slate-700/50"
+                className="w-10 h-10 bg-slate-800/20 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-[#BD9f67]/80 transition-all duration-300 group border border-[#BD9f67]/20"
               >
                 <svg
                   className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900 transition-colors"
@@ -199,7 +199,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-slate-700/50">
+        <div className="pt-8 border-t border-[#BD9f67]/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-slate-400 text-sm">
               © {new Date().getFullYear()} Codeshack SMVIT. All rights reserved.

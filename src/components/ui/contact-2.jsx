@@ -5,21 +5,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-interface Contact2Props {
-  title?: string;
-  description?: string;
-  phone?: string;
-  email?: string;
-  web?: { label: string; url: string };
-}
-
 export const Contact2 = ({
   title = "Contact Us",
   description = "We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!",
   phone = "(123) 34567890",
   email = "email@example.com",
   web = { label: "shadcnblocks.com", url: "https://shadcnblocks.com" },
-}: Contact2Props) => {
+}) => {
   return (
     <section className="py-32 relative">
       <div className="container mx-auto px-4 sm:px-6">
