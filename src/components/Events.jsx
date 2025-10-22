@@ -1,64 +1,65 @@
 import React from "react";
+import TimelineDemo from "./ui/timeline-demo";
+import { useShaderBackground } from "./ui/animated-shader-background";
+import Footer from "./Footer";
 
 const Events = () => {
+  const canvasRef = useShaderBackground();
+
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white pt-24 pb-20">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#BD9f67] mb-8 animate-fade-in">
-            Events
-          </h1>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-slate-800/50 p-6 rounded-lg border border-[#BD9f67]/20 hover:border-[#BD9f67]/50 hover:scale-105 transition-all duration-300">
-              <div className="text-[#BD9f67] text-4xl mb-4">🎯</div>
-              <h3 className="text-xl font-bold text-white mb-2">Hackathons</h3>
-              <p className="text-slate-300">
-                Participate in exciting coding challenges and build innovative
-                solutions.
-              </p>
-            </div>
-            <div className="bg-slate-800/50 p-6 rounded-lg border border-[#BD9f67]/20 hover:border-[#BD9f67]/50 hover:scale-105 transition-all duration-300">
-              <div className="text-[#BD9f67] text-4xl mb-4">💻</div>
-              <h3 className="text-xl font-bold text-white mb-2">Workshops</h3>
-              <p className="text-slate-300">
-                Learn new technologies and tools from industry experts.
-              </p>
-            </div>
-            <div className="bg-slate-800/50 p-6 rounded-lg border border-[#BD9f67]/20 hover:border-[#BD9f67]/50 hover:scale-105 transition-all duration-300">
-              <div className="text-[#BD9f67] text-4xl mb-4">🎤</div>
-              <h3 className="text-xl font-bold text-white mb-2">Tech Talks</h3>
-              <p className="text-slate-300">
-                Engage with speakers on cutting-edge technology topics.
-              </p>
-            </div>
-            <div className="bg-slate-800/50 p-6 rounded-lg border border-[#BD9f67]/20 hover:border-[#BD9f67]/50 hover:scale-105 transition-all duration-300">
-              <div className="text-[#BD9f67] text-4xl mb-4">🏆</div>
-              <h3 className="text-xl font-bold text-white mb-2">
-                Competitions
-              </h3>
-              <p className="text-slate-300">
-                Test your skills in various technical competitions.
-              </p>
-            </div>
-            <div className="bg-slate-800/50 p-6 rounded-lg border border-[#BD9f67]/20 hover:border-[#BD9f67]/50 hover:scale-105 transition-all duration-300">
-              <div className="text-[#BD9f67] text-4xl mb-4">🚀</div>
-              <h3 className="text-xl font-bold text-white mb-2">
-                Project Showcases
-              </h3>
-              <p className="text-slate-300">
-                Display your innovative projects to the community.
-              </p>
-            </div>
-            <div className="bg-slate-800/50 p-6 rounded-lg border border-[#BD9f67]/20 hover:border-[#BD9f67]/50 hover:scale-105 transition-all duration-300">
-              <div className="text-[#BD9f67] text-4xl mb-4">🌐</div>
-              <h3 className="text-xl font-bold text-white mb-2">Networking</h3>
-              <p className="text-slate-300">
-                Connect with like-minded tech enthusiasts and professionals.
-              </p>
+    <div className="min-h-screen text-white overflow-x-hidden relative">
+      {/* Animated Shader Background */}
+      <canvas
+        ref={canvasRef}
+        className="fixed inset-0 w-full h-full object-cover pointer-events-none"
+        style={{background: "black", zIndex: 0}}
+      />
+
+      {/* Gradient Overlay for better text readability */}
+      <div
+        className="fixed inset-0 bg-linear-to-b from-slate-900/40 via-transparent to-slate-900/60 pointer-events-none"
+        style={{zIndex: 1}}
+      ></div>
+
+      {/* Hero Section */}
+      <section
+        className="relative pt-24 pb-20 min-h-screen flex items-center"
+        style={{zIndex: 2}}
+      >
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight animate-fade-in mb-8">
+              <span className="text-[#BD9f67]">OUR EVENTS</span>
+              <br />
+              <span className="text-white">THROUGH TIME</span>
+            </h1>
+            <div className="flex justify-center">
+              <div className="animate-bounce">
+                <svg
+                  className="w-6 h-6 text-[#BD9f67]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Timeline Content */}
+      <div className="relative" style={{zIndex: 2}}>
+        <TimelineDemo />
       </div>
+
+      <Footer />
     </div>
   );
 };

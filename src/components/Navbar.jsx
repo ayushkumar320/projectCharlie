@@ -9,8 +9,8 @@ const Navbar = () => {
 
   const navLinks = [
     {path: "/", label: "HOME"},
-    {path: "/events", label: "EVENTS"},
     {path: "/gallery", label: "GALLERY"},
+    {path: "/events", label: "EVENTS"},
   ];
 
   return (
