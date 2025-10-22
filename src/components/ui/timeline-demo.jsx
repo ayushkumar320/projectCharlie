@@ -1,8 +1,8 @@
 import React from 'react';
-import Timeline3D, { TimelineEvent } from '@/components/ui/3d-interactive-timeline';
+import Timeline3D from '@/components/ui/3d-interactive-timeline.jsx';
 
-const TimelineDemo: React.FC = () => {
-  const timelineEvents: TimelineEvent[] = [
+const TimelineDemo = () => {
+  const timelineEvents = [
     {
       id: '1',
       date: '2019',

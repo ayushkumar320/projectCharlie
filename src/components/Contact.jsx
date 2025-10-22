@@ -1,5 +1,5 @@
 import React from "react";
-import { Contact2 } from "./ui/contact-2";
+import { Contact2 } from "./ui/contact-2.jsx";
 import { useShaderBackground } from "./ui/animated-shader-background";
 
 const Contact = () => {
