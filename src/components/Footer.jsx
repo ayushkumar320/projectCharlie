@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 const Footer = () => {
   return (
     <footer
-      className="relative bg-transparent backdrop-blur-md border-t border-[#BD9f67]/20"
+      className="relative bg-slate-900/80 backdrop-blur-md border-t border-[#BD9f67]/20"
       style={{zIndex: 2}}
     >
       <div className="container mx-auto px-4 sm:px-6 py-16">

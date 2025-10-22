@@ -223,7 +223,7 @@ const Home = () => {
       </section>
 
       {/* What is Codeshack - Lamp Section */}
-      <div id="about" style={{zIndex: 50}} className="relative z-50">
+      <div id="about" style={{zIndex: 2}} className="relative">
         <WhatIsCodeshackLamp />
       </div>
 
