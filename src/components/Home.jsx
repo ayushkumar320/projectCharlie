@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
-import {useShaderBackground} from "./ui/animated-shader-background";
 import Footer from "./Footer";
 import {WhatIsCodeshackLamp} from "./WhatIsCodeshackLamp";
+import {useShaderBackground} from "./ui/animated-shader-background";
 
 const Home = () => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -45,15 +45,15 @@ const Home = () => {
 
       {/* Social Media Sidebar - Fixed on right side */}
       <div
-        className="hidden lg:flex fixed right-0 top-1/2 transform -translate-y-1/2 flex-col bg-slate-800/30 backdrop-blur-xl rounded-l-2xl border-l-2 border-y-2 border-[#BD9f67]/30 shadow-2xl"
-        style={{zIndex: 9999}}
+        className="hidden lg:flex fixed right-0 top-1/2 transform -translate-y-1/2 flex-col bg-slate-800/10 backdrop-blur-md rounded-l-2xl border-l-2 border-y-2 border-[#BD9f67]/20 shadow-2xl"
+        style={{zIndex: 10}}
       >
         <a
           href="#"
-          className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
+          className="w-12 h-12 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
         >
           <svg
-            className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
+            className="w-6 h-6 text-[#BD9f67] group-hover:text-slate-900"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -62,10 +62,10 @@ const Home = () => {
         </a>
         <a
           href="#"
-          className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
+          className="w-12 h-12 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
         >
           <svg
-            className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
+            className="w-6 h-6 text-[#BD9f67] group-hover:text-slate-900"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -74,10 +74,10 @@ const Home = () => {
         </a>
         <a
           href="#"
-          className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
+          className="w-12 h-12 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
         >
           <svg
-            className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
+            className="w-6 h-6 text-[#BD9f67] group-hover:text-slate-900"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -86,10 +86,10 @@ const Home = () => {
         </a>
         <a
           href="#"
-          className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
+          className="w-12 h-12 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
         >
           <svg
-            className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
+            className="w-6 h-6 text-[#BD9f67] group-hover:text-slate-900"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -98,7 +98,7 @@ const Home = () => {
         </a>
         <a
           href="#"
-          className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group rounded-bl-2xl"
+          className="w-12 h-12 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group rounded-bl-2xl"
         >
           <svg
             className="w-6 h-6 text-[#BD9f67] group-hover:text-slate-900"
@@ -223,7 +223,7 @@ const Home = () => {
       </section>
 
       {/* What is Codeshack - Lamp Section */}
-      <div id="about" style={{zIndex: 5}} className="relative z-30">
+      <div id="about" style={{zIndex: 50}} className="relative z-50">
         <WhatIsCodeshackLamp />
       </div>
 
