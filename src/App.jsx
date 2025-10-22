@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Events from "./components/Events";
 import Gallery from "./components/Gallery";
 import JoinUs from "./components/JoinUs";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<Events />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/join" element={<JoinUs />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
     </Router>

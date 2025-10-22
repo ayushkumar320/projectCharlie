@@ -39,7 +39,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Link
-              to="/join"
+              to="/contact"
               className="bg-[#BD9f67] text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-[#A88A5C] transition-colors duration-300"
             >
               JOIN US
