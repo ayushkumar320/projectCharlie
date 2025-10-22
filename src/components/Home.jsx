@@ -1,11 +1,18 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 const Home = () => {
   const [isFlipped, setIsFlipped] = useState(false);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFlipped((prev) => !prev);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const handleLogoClick = () => {
     setIsFlipped(!isFlipped);
-    setTimeout(() => setIsFlipped(false), 600);
   };
 
   return (
@@ -58,36 +65,27 @@ const Home = () => {
                   onClick={handleLogoClick}
                 >
                   <div
-                    className={`relative w-full h-full transition-transform duration-600 transform-style-3d ${
+                    className={`relative w-full h-full transition-transform duration-1000 transform-style-3d ${
                       isFlipped ? "rotate-y-180" : ""
                     }`}
                   >
                     <div className="absolute inset-0 flex items-center justify-center backface-hidden">
                       <div className="bg-slate-800 rounded-full p-6 sm:p-8 border-4 border-amber-400 shadow-2xl hover:shadow-amber-400/50 transition-shadow duration-300">
                         <img
-                          src="/logo.jpg"
-                          alt="Codeshack Logo"
-                          className="w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full object-cover"
+                          src="/glug-logo.jpg"
+                          alt="GLUG Logo"
+                          className="w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full object-contain"
                         />
                       </div>
                     </div>
 
                     <div className="absolute inset-0 flex items-center justify-center backface-hidden rotate-y-180">
                       <div className="bg-slate-800 rounded-full p-6 sm:p-8 border-4 border-amber-400 shadow-2xl flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-amber-400 mb-2 sm:mb-3">
-                            CS
-                          </div>
-                          <div className="text-xs sm:text-sm text-slate-300 font-semibold tracking-wider">
-                            CODESHACK
-                          </div>
-                          <div className="text-xs text-slate-400 mt-1">
-                            SMVIT
-                          </div>
-                          <div className="text-xs text-amber-400 mt-2 font-semibold">
-                            Click to flip
-                          </div>
-                        </div>
+                        <img
+                          src="/techhub-logo.jpg"
+                          alt="TechHub Logo"
+                          className="w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full object-contain"
+                        />
                       </div>
                     </div>
                   </div>
