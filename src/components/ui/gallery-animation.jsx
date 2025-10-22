@@ -5,6 +5,7 @@ const ExpandableGallery = ({ images, className = '' }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(null);
 
+
   const openImage = (index) => {
     setSelectedIndex(index);
   };
@@ -31,36 +32,47 @@ const ExpandableGallery = ({ images, className = '' }) => {
     if (hoveredIndex === null) {
       return 1;
     }
-    return hoveredIndex === index ? 2 : 0.5;
+    return hoveredIndex === index ? 2 : 0.8;
   };
+
 
   return (
     <div className={className}>
       {/* Horizontal Expandable Gallery */}
       <div className="flex gap-2 h-96 w-full">
         {images.map((image, index) => (
-          <motion.div
+          <div
             key={index}
-            className="relative cursor-pointer overflow-hidden rounded-md"
-            style={{ flex: 1 }}
-            animate={{ flex: getFlexValue(index) }}
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            className="relative cursor-pointer overflow-hidden rounded-md group flex-1 min-w-[120px]"
+            style={{ 
+              flex: getFlexValue(index),
+              transition: 'flex 0.5s ease-in-out',
+              backgroundColor: hoveredIndex === index ? 'rgba(189, 159, 103, 0.1)' : 'transparent'
+            }}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
-            onClick={() => openImage(index)}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              openImage(index);
+            }}
           >
             <img
               src={image}
               alt={`Gallery image ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              draggable={false}
             />
-            <motion.div
-              className="absolute inset-0 bg-black"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: hoveredIndex === index ? 0 : 0.3 }}
-              transition={{ duration: 0.3 }}
+            <div
+              className="absolute inset-0 bg-black transition-opacity duration-300"
+              style={{ opacity: hoveredIndex === index ? 0 : 0.2 }}
             />
-          </motion.div>
+            {/* Hover indicator */}
+            <div
+              className="absolute inset-0 border-2 border-[#BD9f67] rounded-md pointer-events-none transition-opacity duration-300"
+              style={{ opacity: hoveredIndex === index ? 1 : 0 }}
+            />
+          </div>
         ))}
       </div>
 
