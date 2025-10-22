@@ -248,19 +248,204 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="about" className="relative py-20 bg-white text-slate-900">
+      <section id="about" className="relative py-12 bg-white text-slate-900">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#BD9f67] mb-6">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#BD9f67] mb-4">
               What is Codeshack?
             </h2>
             <p className="text-base sm:text-lg max-w-4xl mx-auto leading-relaxed text-slate-700">
-              Codeshack at SMVIT helps hustling startups and young professionals
+              Codeshack at SMVIT helps tech enthusiasts and young professionals
               via dynamic workshops, thought-provoking speaker sessions,
-              high-stakes business plan competitions, and numerous other
-              game-changing initiatives throughout the year to create a crucible
-              for innovation.
+              high-stakes coding competitions, and numerous other game-changing
+              initiatives throughout the year to create a crucible for
+              innovation. We stand as pillars of support for budding developers,
+              providing them with personalized guidance from experienced
+              mentors, crucial learning opportunities, and a robust network that
+              can change the course of their journey forever!
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics Section */}
+      <section className="relative py-16 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <svg
+                  className="w-16 h-16 text-[#BD9f67]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+              </div>
+              <div className="text-4xl font-bold text-[#BD9f67] mb-2">100+</div>
+              <div className="text-slate-300 text-lg">Active Members</div>
+            </div>
+
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <svg
+                  className="w-16 h-16 text-[#BD9f67]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <div className="text-4xl font-bold text-[#BD9f67] mb-2">50+</div>
+              <div className="text-slate-300 text-lg">Events Conducted</div>
+            </div>
+
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <svg
+                  className="w-16 h-16 text-[#BD9f67]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <div className="text-4xl font-bold text-[#BD9f67] mb-2">5+</div>
+              <div className="text-slate-300 text-lg">Years of Excellence</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Initiatives Section */}
+      <section className="relative py-20 bg-white text-slate-900">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#BD9f67] mb-4">
+              OUR INITIATIVES
+            </h2>
+            <p className="text-base sm:text-lg max-w-4xl mx-auto leading-relaxed text-slate-700">
+              We at Codeshack, SMVIT believe that innovation is the key to
+              development. To fulfill this vision, we have conceptualized &
+              successfully implemented various initiatives to help students and
+              young professionals in their technical journey.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Tech Vistara */}
+            <div className="bg-slate-800 p-6 rounded-lg border-2 border-[#BD9f67]/30 hover:border-[#BD9f67] hover:scale-105 transition-all duration-300 group cursor-pointer">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-[#BD9f67]/20 rounded-lg flex items-center justify-center group-hover:bg-[#BD9f67]/30 transition-colors duration-300">
+                  <span className="text-3xl">🚀</span>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-[#BD9f67] mb-3 text-center">
+                Tech Vistara
+              </h3>
+              <p className="text-slate-300 text-center text-sm">
+                Annual technical fest featuring hackathons, workshops, and
+                competitions showcasing innovation and creativity.
+              </p>
+            </div>
+
+            {/* Codeshack Summer of Code */}
+            <div className="bg-slate-800 p-6 rounded-lg border-2 border-[#BD9f67]/30 hover:border-[#BD9f67] hover:scale-105 transition-all duration-300 group cursor-pointer">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-[#BD9f67]/20 rounded-lg flex items-center justify-center group-hover:bg-[#BD9f67]/30 transition-colors duration-300">
+                  <span className="text-3xl">☀️</span>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-[#BD9f67] mb-3 text-center">
+                CSOC
+              </h3>
+              <p className="text-slate-300 text-center text-sm">
+                Codeshack Summer of Code - A month-long open source contribution
+                program for students to learn and contribute.
+              </p>
+            </div>
+
+            {/* Hacktoberfest */}
+            <div className="bg-slate-800 p-6 rounded-lg border-2 border-[#BD9f67]/30 hover:border-[#BD9f67] hover:scale-105 transition-all duration-300 group cursor-pointer">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-[#BD9f67]/20 rounded-lg flex items-center justify-center group-hover:bg-[#BD9f67]/30 transition-colors duration-300">
+                  <span className="text-3xl">🎃</span>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-[#BD9f67] mb-3 text-center">
+                Hacktoberfest
+              </h3>
+              <p className="text-slate-300 text-center text-sm">
+                Monthly guidance sessions and workshops helping students
+                contribute to open source projects worldwide.
+              </p>
+            </div>
+
+            {/* Workshop Series */}
+            <div className="bg-slate-800 p-6 rounded-lg border-2 border-[#BD9f67]/30 hover:border-[#BD9f67] hover:scale-105 transition-all duration-300 group cursor-pointer">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-[#BD9f67]/20 rounded-lg flex items-center justify-center group-hover:bg-[#BD9f67]/30 transition-colors duration-300">
+                  <span className="text-3xl">💻</span>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-[#BD9f67] mb-3 text-center">
+                Workshop Series
+              </h3>
+              <p className="text-slate-300 text-center text-sm">
+                Regular hands-on workshops on latest technologies, tools, and
+                frameworks led by industry experts.
+              </p>
+            </div>
+
+            {/* Code Nights */}
+            <div className="bg-slate-800 p-6 rounded-lg border-2 border-[#BD9f67]/30 hover:border-[#BD9f67] hover:scale-105 transition-all duration-300 group cursor-pointer">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-[#BD9f67]/20 rounded-lg flex items-center justify-center group-hover:bg-[#BD9f67]/30 transition-colors duration-300">
+                  <span className="text-3xl">🌙</span>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-[#BD9f67] mb-3 text-center">
+                Code Nights
+              </h3>
+              <p className="text-slate-300 text-center text-sm">
+                Overnight coding marathons where students collaborate on
+                projects and solve real-world problems.
+              </p>
+            </div>
+
+            {/* Tech Talks */}
+            <div className="bg-slate-800 p-6 rounded-lg border-2 border-[#BD9f67]/30 hover:border-[#BD9f67] hover:scale-105 transition-all duration-300 group cursor-pointer">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-[#BD9f67]/20 rounded-lg flex items-center justify-center group-hover:bg-[#BD9f67]/30 transition-colors duration-300">
+                  <span className="text-3xl">🎤</span>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-[#BD9f67] mb-3 text-center">
+                Tech Talks
+              </h3>
+              <p className="text-slate-300 text-center text-sm">
+                Engaging speaker sessions with industry leaders sharing insights
+                on cutting-edge technologies and trends.
+              </p>
+            </div>
           </div>
         </div>
       </section>
