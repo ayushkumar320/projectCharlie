@@ -38,7 +38,7 @@ const Home = () => {
 
       {/* Gradient Overlay for better text readability */}
       <div
-        className="fixed inset-0 bg-gradient-to-b from-slate-900/40 via-transparent to-slate-900/60 pointer-events-none"
+        className="fixed inset-0 bg-linear-to-b from-slate-900/40 via-transparent to-slate-900/60 pointer-events-none"
         style={{zIndex: 1}}
       ></div>
 
@@ -86,8 +86,8 @@ const Home = () => {
 
             <div className="flex-1 flex justify-center items-center">
               <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-                <div className="absolute inset-0 rounded-full border-2 border-[#BD9f67]/20 backdrop-blur-sm animate-spin-slow bg-gradient-to-r from-[#BD9f67]/10 to-transparent"></div>
-                <div className="absolute inset-6 sm:inset-8 rounded-full border-2 border-[#BD9f67]/30 backdrop-blur-sm animate-spin-reverse bg-gradient-to-l from-[#BD9f67]/10 to-transparent"></div>
+                <div className="absolute inset-0 rounded-full border-2 border-[#BD9f67]/20 backdrop-blur-sm animate-spin-slow bg-linear-to-r from-[#BD9f67]/10 to-transparent"></div>
+                <div className="absolute inset-6 sm:inset-8 rounded-full border-2 border-[#BD9f67]/30 backdrop-blur-sm animate-spin-reverse bg-linear-to-l from-[#BD9f67]/10 to-transparent"></div>
 
                 <div
                   className="absolute inset-0 flex items-center justify-center cursor-pointer perspective-1000"
