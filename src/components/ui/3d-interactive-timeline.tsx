@@ -96,7 +96,7 @@ export const Timeline3D: React.FC<Timeline3DProps> = ({
           {[...Array(8)].map((_, i) => (
             <motion.div
               key={i}
-              className={`absolute rounded-full opacity-20 ${i % 2 === 0 ? primaryColor : secondaryColor}`}
+              className={`absolute rounded-full opacity-20 ${i % 2 === 0 ? 'bg-[#BD9f67]' : 'bg-violet-500'}`}
               animate={{
                 x: [
                   `${20 + i * 10}%`,
@@ -135,21 +135,13 @@ export const Timeline3D: React.FC<Timeline3DProps> = ({
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-16 text-center tracking-tight">
-            <span className="inline-block">
-              <span className="relative inline-block">
-                <span className={`absolute -inset-1 rounded-lg ${accentColor} blur opacity-30`}></span>
-                <span className="relative">Interactive Timeline</span>
-              </span>
-            </span>
-          </h2>
 
           <div className="relative">
             {/* Central line */}
             <div
-              className={`absolute left-1/2 transform -translate-x-1/2 h-full w-1 ${primaryColor} rounded-full`}
+              className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#BD9f67] rounded-full"
               style={{
-                boxShadow: `0 0 15px ${primaryColor.replace('bg-', 'rgb-')}`,
+                boxShadow: `0 0 15px rgba(189,159,103,0.5)`,
               }}
             ></div>
 
@@ -205,18 +197,18 @@ export const Timeline3D: React.FC<Timeline3DProps> = ({
                     } z-20`}
                   >
                     <motion.div
-                      className={`w-10 h-10 rounded-full ${eventColor} flex items-center justify-center border-4 border-slate-900 cursor-pointer`}
+                      className="w-10 h-10 rounded-full bg-[#BD9f67] flex items-center justify-center border-4 border-slate-900 cursor-pointer shadow-lg"
                       whileHover={{ scale: 1.2 }}
                       onClick={() => setActiveEvent(activeEvent === event.id ? null : event.id)}
                       animate={{
                         boxShadow:
                           activeEvent === event.id
                             ? [
-                                `0 0 0 rgba(255,255,255,0.5)`,
-                                `0 0 20px rgba(255,255,255,0.8)`,
-                                `0 0 0 rgba(255,255,255,0.5)`,
+                                `0 0 0 rgba(189,159,103,0.5)`,
+                                `0 0 20px rgba(189,159,103,0.8)`,
+                                `0 0 0 rgba(189,159,103,0.5)`,
                               ]
-                            : `0 0 0 rgba(255,255,255,0)`,
+                            : `0 0 0 rgba(189,159,103,0)`,
                       }}
                       transition={{
                         repeat: activeEvent === event.id ? Infinity : 0,
@@ -233,9 +225,9 @@ export const Timeline3D: React.FC<Timeline3DProps> = ({
 
                   {/* Content card */}
                   <motion.div
-                    className={`relative z-10 bg-slate-800 bg-opacity-80 backdrop-blur-lg rounded-2xl overflow-hidden shadow-xl w-full md:w-[calc(100%-2rem)] ${
+                    className={`relative z-10 bg-slate-800/40 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl w-full md:w-[calc(100%-2rem)] ${
                       isEven ? 'md:ml-12' : 'md:mr-12'
-                    } border border-slate-700`}
+                    } border border-[#BD9f67]/20 hover:border-[#BD9f67]/40 transition-all duration-300`}
                     whileHover={{
                       y: -5,
                       x: isEven ? 5 : -5,
@@ -267,7 +259,7 @@ export const Timeline3D: React.FC<Timeline3DProps> = ({
                         
                         {event.category && (
                           <div className="absolute top-4 right-4">
-                            <span className={`${accentColor} px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase`}>
+                            <span className="bg-[#BD9f67]/90 backdrop-blur-md text-slate-900 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase shadow-lg">
                               {event.category}
                             </span>
                           </div>
@@ -277,12 +269,12 @@ export const Timeline3D: React.FC<Timeline3DProps> = ({
 
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-4">
-                        <span className={`text-sm font-mono ${accentColor.replace('bg-', 'text-')} tracking-wider`}>
+                        <span className="text-sm font-mono text-[#BD9f67] tracking-wider">
                           {event.date}
                         </span>
                         
                         <motion.div 
-                          className={`w-3 h-3 rounded-full ${eventColor}`}
+                          className="w-3 h-3 rounded-full bg-[#BD9f67]"
                           animate={{ 
                             scale: [1, 1.5, 1],
                             opacity: [0.7, 1, 0.7] 
@@ -313,7 +305,7 @@ export const Timeline3D: React.FC<Timeline3DProps> = ({
                         {event.link && (
                           <a 
                             href={event.link.url}
-                            className={`inline-block mt-4 px-4 py-2 ${primaryColor} hover:bg-opacity-80 rounded-lg font-medium transition-all duration-200 transform hover:-translate-y-1`}
+                            className="inline-block mt-4 px-4 py-2 bg-[#BD9f67] hover:bg-[#BD9f67]/90 text-slate-900 rounded-lg font-medium transition-all duration-200 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
                           >
                             {event.link.text}
                           </a>
@@ -322,7 +314,7 @@ export const Timeline3D: React.FC<Timeline3DProps> = ({
                     </div>
                     
                     <motion.div 
-                      className={`absolute bottom-0 left-0 h-1 ${eventColor}`}
+                      className="absolute bottom-0 left-0 h-1 bg-[#BD9f67]"
                       initial={{ width: "0%" }}
                       animate={{ width: activeEvent === event.id ? "100%" : "0%" }}
                       transition={{ duration: 0.5 }}

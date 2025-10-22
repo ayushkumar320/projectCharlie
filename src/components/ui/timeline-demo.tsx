@@ -80,7 +80,8 @@ const TimelineDemo: React.FC = () => {
         primaryColor="bg-[#BD9f67]"
         secondaryColor="bg-violet-500"
         accentColor="bg-emerald-500"
-        backgroundColor="bg-slate-900"
+        backgroundColor="bg-transparent"
+        showImages={true}
       />
     </div>
   );
