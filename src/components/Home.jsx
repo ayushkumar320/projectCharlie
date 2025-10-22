@@ -28,8 +28,8 @@ const Home = () => {
               </h1>
 
               <p className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed">
-                The Technical Club of SMVIT has been inspiring students since
-                its inception. Codeshack is the umbrella organization for{" "}
+                The Technical Club of Sir MVIT has been inspiring students since
+                its inception. Codeshack is the parent organization for{" "}
                 <span className="text-amber-400 font-semibold">GLUG</span>{" "}
                 (GNU/Linux Users Group) and{" "}
                 <span className="text-amber-400 font-semibold">TechHub</span>,
@@ -37,7 +37,7 @@ const Home = () => {
                 the premier student-run tech community.
               </p>
 
-              <button className="group bg-amber-400 text-slate-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-amber-500 transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl hover:scale-105 mx-auto lg:mx-0">
+              <button className="group bg-amber-400 text-slate-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-amber-500 transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl hover:scale-105 mx-auto lg:mx-0 cursor-pointer">
                 Know More
                 <svg
                   className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
