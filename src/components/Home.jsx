@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import {useShaderBackground} from "./ui/animated-shader-background";
 import Footer from "./Footer";
+import {WhatIsCodeshackLamp} from "./WhatIsCodeshackLamp";
 
 const Home = () => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -42,6 +43,73 @@ const Home = () => {
         style={{zIndex: 1}}
       ></div>
 
+      {/* Social Media Sidebar - Fixed on right side */}
+      <div
+        className="hidden lg:flex fixed right-0 top-1/2 transform -translate-y-1/2 flex-col bg-slate-800/30 backdrop-blur-xl rounded-l-2xl border-l-2 border-y-2 border-[#BD9f67]/30 shadow-2xl"
+        style={{zIndex: 9999}}
+      >
+        <a
+          href="#"
+          className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
+        >
+          <svg
+            className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+          </svg>
+        </a>
+        <a
+          href="#"
+          className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
+        >
+          <svg
+            className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg>
+        </a>
+        <a
+          href="#"
+          className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
+        >
+          <svg
+            className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+          </svg>
+        </a>
+        <a
+          href="#"
+          className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
+        >
+          <svg
+            className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
+        </a>
+        <a
+          href="#"
+          className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group rounded-bl-2xl"
+        >
+          <svg
+            className="w-6 h-6 text-[#BD9f67] group-hover:text-slate-900"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.441 16.892c-2.102.144-6.784.144-8.883 0C5.282 16.736 5.017 15.622 5 12c.017-3.629.285-4.736 2.558-4.892 2.099-.144 6.782-.144 8.883 0C18.718 7.264 18.982 8.378 19 12c-.018 3.629-.285 4.736-2.559 4.892zM10 9.658l4.917 2.338L10 14.342V9.658z" />
+          </svg>
+        </a>
+      </div>
+
       <section
         id="hero"
         className="relative pt-24 pb-20 min-h-screen flex items-center"
@@ -66,7 +134,16 @@ const Home = () => {
                 the premier student-run tech community.
               </p>
 
-              <button className="group bg-[#BD9f67]/90 backdrop-blur-md text-slate-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-[#BD9f67] transition-all duration-300 flex items-center gap-3 shadow-lg shadow-[#BD9f67]/20 hover:shadow-2xl hover:shadow-[#BD9f67]/40 hover:scale-105 mx-auto lg:mx-0 cursor-pointer border border-[#BD9f67]/50">
+              <a
+                href="#about"
+                className="group bg-[#BD9f67]/90 backdrop-blur-md text-slate-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-[#BD9f67] transition-all duration-300 flex items-center gap-3 shadow-lg shadow-[#BD9f67]/20 hover:shadow-2xl hover:shadow-[#BD9f67]/40 hover:scale-105 mx-auto lg:mx-0 cursor-pointer border border-[#BD9f67]/50 w-fit"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .getElementById("about")
+                    ?.scrollIntoView({behavior: "smooth"});
+                }}
+              >
                 Know More
                 <svg
                   className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
@@ -81,7 +158,7 @@ const Home = () => {
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-              </button>
+              </a>
             </div>
 
             <div className="flex-1 flex justify-center items-center">
@@ -127,69 +204,6 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="hidden lg:flex fixed right-0 top-1/2 transform -translate-y-1/2 flex-col z-40 bg-slate-800/30 backdrop-blur-xl rounded-l-2xl border-l-2 border-y-2 border-[#BD9f67]/30 shadow-2xl">
-            <a
-              href="#"
-              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
-            >
-              <svg
-                className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-              </svg>
-            </a>
-            <a
-              href="#"
-              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
-            >
-              <svg
-                className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
-            </a>
-            <a
-              href="#"
-              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
-            >
-              <svg
-                className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-              </svg>
-            </a>
-            <a
-              href="#"
-              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
-            >
-              <svg
-                className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-              </svg>
-            </a>
-            <a
-              href="#"
-              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group rounded-bl-2xl"
-            >
-              <svg
-                className="w-6 h-6 text-[#BD9f67] group-hover:text-slate-900"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.441 16.892c-2.102.144-6.784.144-8.883 0C5.282 16.736 5.017 15.622 5 12c.017-3.629.285-4.736 2.558-4.892 2.099-.144 6.782-.144 8.883 0C18.718 7.264 18.982 8.378 19 12c-.018 3.629-.285 4.736-2.559 4.892zM10 9.658l4.917 2.338L10 14.342V9.658z" />
-              </svg>
-            </a>
-          </div>
-
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
             <svg
               className="w-6 h-6 text-[#BD9f67]"
@@ -208,29 +222,10 @@ const Home = () => {
         </div>
       </section>
 
-      <section
-        id="about"
-        className="relative py-12 bg-white/5 backdrop-blur-2xl text-white border-y border-white/10"
-        style={{zIndex: 2}}
-      >
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 bg-slate-800/30 backdrop-blur-xl rounded-3xl p-8 sm:p-12 border border-[#BD9f67]/20 shadow-2xl">
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#BD9f67] mb-4">
-              What is Codeshack?
-            </h2>
-            <p className="text-base sm:text-lg max-w-4xl mx-auto leading-relaxed text-slate-300">
-              Codeshack at SMVIT helps tech enthusiasts and young professionals
-              via dynamic workshops, thought-provoking speaker sessions,
-              high-stakes coding competitions, and numerous other game-changing
-              initiatives throughout the year to create a crucible for
-              innovation. We stand as pillars of support for budding developers,
-              providing them with personalized guidance from experienced
-              mentors, crucial learning opportunities, and a robust network that
-              can change the course of their journey forever!
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* What is Codeshack - Lamp Section */}
+      <div id="about" style={{zIndex: 2}} className="relative">
+        <WhatIsCodeshackLamp />
+      </div>
 
       <section
         className="relative py-16 bg-linear-to-r from-slate-900/50 via-slate-800/50 to-slate-900/50 backdrop-blur-xl"
