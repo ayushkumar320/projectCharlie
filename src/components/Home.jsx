@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
+import {useShaderBackground} from "./ui/animated-shader-background";
 
 const Home = () => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [flippedCards, setFlippedCards] = useState({});
+  const canvasRef = useShaderBackground();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,12 +27,26 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-x-hidden">
+    <div className="min-h-screen text-white overflow-x-hidden relative">
+      {/* Animated Shader Background */}
+      <canvas
+        ref={canvasRef}
+        className="fixed inset-0 w-full h-full object-cover pointer-events-none"
+        style={{background: "black", zIndex: 0}}
+      />
+
+      {/* Gradient Overlay for better text readability */}
+      <div
+        className="fixed inset-0 bg-gradient-to-b from-slate-900/40 via-transparent to-slate-900/60 pointer-events-none"
+        style={{zIndex: 1}}
+      ></div>
+
       <section
         id="hero"
         className="relative pt-24 pb-20 min-h-screen flex items-center"
+        style={{zIndex: 2}}
       >
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 min-h-[80vh]">
             <div className="flex-1 space-y-4 sm:space-y-6 max-w-2xl text-center lg:text-left">
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight animate-fade-in">
@@ -49,7 +65,7 @@ const Home = () => {
                 the premier student-run tech community.
               </p>
 
-              <button className="group bg-[#BD9f67] text-slate-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-[#A88A5C] transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl hover:scale-105 mx-auto lg:mx-0 cursor-pointer">
+              <button className="group bg-[#BD9f67]/90 backdrop-blur-md text-slate-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-[#BD9f67] transition-all duration-300 flex items-center gap-3 shadow-lg shadow-[#BD9f67]/20 hover:shadow-2xl hover:shadow-[#BD9f67]/40 hover:scale-105 mx-auto lg:mx-0 cursor-pointer border border-[#BD9f67]/50">
                 Know More
                 <svg
                   className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
@@ -69,8 +85,8 @@ const Home = () => {
 
             <div className="flex-1 flex justify-center items-center">
               <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-                <div className="absolute inset-0 rounded-full border-4 border-[#BD9f67]/30 animate-spin-slow"></div>
-                <div className="absolute inset-6 sm:inset-8 rounded-full border-4 border-[#BD9f67]/50 animate-spin-reverse"></div>
+                <div className="absolute inset-0 rounded-full border-2 border-[#BD9f67]/20 backdrop-blur-sm animate-spin-slow bg-gradient-to-r from-[#BD9f67]/10 to-transparent"></div>
+                <div className="absolute inset-6 sm:inset-8 rounded-full border-2 border-[#BD9f67]/30 backdrop-blur-sm animate-spin-reverse bg-gradient-to-l from-[#BD9f67]/10 to-transparent"></div>
 
                 <div
                   className="absolute inset-0 flex items-center justify-center cursor-pointer perspective-1000"
@@ -82,7 +98,7 @@ const Home = () => {
                     }`}
                   >
                     <div className="absolute inset-0 flex items-center justify-center backface-hidden">
-                      <div className="bg-slate-800 rounded-full p-6 sm:p-8 border-4 border-[#BD9f67] shadow-2xl hover:shadow-[#BD9f67]/50 transition-shadow duration-300">
+                      <div className="bg-slate-800/40 backdrop-blur-xl rounded-full p-6 sm:p-8 border-2 border-[#BD9f67]/50 shadow-2xl shadow-[#BD9f67]/20 hover:shadow-[#BD9f67]/40 hover:border-[#BD9f67]/70 transition-all duration-300">
                         <img
                           src="/Glug-logo.jpg"
                           alt="GLUG Logo"
@@ -92,7 +108,7 @@ const Home = () => {
                     </div>
 
                     <div className="absolute inset-0 flex items-center justify-center backface-hidden rotate-y-180">
-                      <div className="bg-slate-800 rounded-full p-6 sm:p-8 border-4 border-[#BD9f67] shadow-2xl flex items-center justify-center">
+                      <div className="bg-slate-800/40 backdrop-blur-xl rounded-full p-6 sm:p-8 border-2 border-[#BD9f67]/50 shadow-2xl shadow-[#BD9f67]/20 flex items-center justify-center">
                         <img
                           src="/techhub-logo.jpg"
                           alt="TechHub Logo"
@@ -103,17 +119,17 @@ const Home = () => {
                   </div>
                 </div>
 
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-[#BD9f67] text-slate-900 px-4 sm:px-6 py-2 rounded-full font-bold shadow-lg text-sm sm:text-base whitespace-nowrap">
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-[#BD9f67]/90 backdrop-blur-md text-slate-900 px-4 sm:px-6 py-2 rounded-full font-bold shadow-lg shadow-[#BD9f67]/30 text-sm sm:text-base whitespace-nowrap border border-[#BD9f67]/50">
                   GLUG X TechHub
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="hidden lg:flex fixed right-0 top-1/2 transform -translate-y-1/2 flex-col z-40 bg-slate-900 rounded-l-2xl">
+          <div className="hidden lg:flex fixed right-0 top-1/2 transform -translate-y-1/2 flex-col z-40 bg-slate-800/30 backdrop-blur-xl rounded-l-2xl border-l-2 border-y-2 border-[#BD9f67]/30 shadow-2xl">
             <a
               href="#"
-              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67] transition-all duration-300 group border-b border-slate-700"
+              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
             >
               <svg
                 className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
@@ -125,7 +141,7 @@ const Home = () => {
             </a>
             <a
               href="#"
-              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67] transition-all duration-300 group border-b border-slate-700"
+              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
             >
               <svg
                 className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
@@ -137,7 +153,7 @@ const Home = () => {
             </a>
             <a
               href="#"
-              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67] transition-all duration-300 group border-b border-slate-700"
+              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
             >
               <svg
                 className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
@@ -149,7 +165,7 @@ const Home = () => {
             </a>
             <a
               href="#"
-              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67] transition-all duration-300 group border-b border-slate-700"
+              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group border-b border-slate-700/50"
             >
               <svg
                 className="w-5 h-5 text-[#BD9f67] group-hover:text-slate-900"
@@ -161,7 +177,7 @@ const Home = () => {
             </a>
             <a
               href="#"
-              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67] transition-all duration-300 group rounded-bl-2xl"
+              className="w-14 h-14 flex items-center justify-center hover:bg-[#BD9f67]/80 backdrop-blur-md transition-all duration-300 group rounded-bl-2xl"
             >
               <svg
                 className="w-6 h-6 text-[#BD9f67] group-hover:text-slate-900"
@@ -191,13 +207,17 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="about" className="relative py-12 bg-white text-slate-900">
+      <section
+        id="about"
+        className="relative py-12 bg-white/5 backdrop-blur-2xl text-white border-y border-white/10"
+        style={{zIndex: 2}}
+      >
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 bg-slate-800/30 backdrop-blur-xl rounded-3xl p-8 sm:p-12 border border-[#BD9f67]/20 shadow-2xl">
             <h2 className="text-4xl sm:text-5xl font-bold text-[#BD9f67] mb-4">
               What is Codeshack?
             </h2>
-            <p className="text-base sm:text-lg max-w-4xl mx-auto leading-relaxed text-slate-700">
+            <p className="text-base sm:text-lg max-w-4xl mx-auto leading-relaxed text-slate-300">
               Codeshack at SMVIT helps tech enthusiasts and young professionals
               via dynamic workshops, thought-provoking speaker sessions,
               high-stakes coding competitions, and numerous other game-changing
@@ -211,10 +231,13 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="relative py-16 bg-linear-to-r from-slate-800 via-slate-700 to-slate-800">
+      <section
+        className="relative py-16 bg-linear-to-r from-slate-900/50 via-slate-800/50 to-slate-900/50 backdrop-blur-xl"
+        style={{zIndex: 2}}
+      >
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="text-center">
+            <div className="text-center bg-slate-800/30 backdrop-blur-xl rounded-2xl p-8 border border-[#BD9f67]/20 hover:border-[#BD9f67]/40 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl hover:shadow-[#BD9f67]/20">
               <div className="flex justify-center mb-4">
                 <svg
                   className="w-16 h-16 text-[#BD9f67]"
@@ -234,7 +257,7 @@ const Home = () => {
               <div className="text-slate-300 text-lg">Active Members</div>
             </div>
 
-            <div className="text-center">
+            <div className="text-center bg-slate-800/30 backdrop-blur-xl rounded-2xl p-8 border border-[#BD9f67]/20 hover:border-[#BD9f67]/40 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl hover:shadow-[#BD9f67]/20">
               <div className="flex justify-center mb-4">
                 <svg
                   className="w-16 h-16 text-[#BD9f67]"
@@ -254,7 +277,7 @@ const Home = () => {
               <div className="text-slate-300 text-lg">Events Conducted</div>
             </div>
 
-            <div className="text-center">
+            <div className="text-center bg-slate-800/30 backdrop-blur-xl rounded-2xl p-8 border border-[#BD9f67]/20 hover:border-[#BD9f67]/40 transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl hover:shadow-[#BD9f67]/20">
               <div className="flex justify-center mb-4">
                 <svg
                   className="w-16 h-16 text-[#BD9f67]"
@@ -278,13 +301,16 @@ const Home = () => {
       </section>
 
       {/* Our Initiatives Section */}
-      <section className="relative py-20 bg-white text-slate-900">
+      <section
+        className="relative py-20 bg-white/5 backdrop-blur-2xl text-white border-y border-white/10"
+        style={{zIndex: 2}}
+      >
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-bold text-[#BD9f67] mb-4">
               OUR INITIATIVES
             </h2>
-            <p className="text-base sm:text-lg max-w-4xl mx-auto leading-relaxed text-slate-700">
+            <p className="text-base sm:text-lg max-w-4xl mx-auto leading-relaxed text-slate-300">
               We at Codeshack, SMVIT believe that innovation is the key to
               development. To fulfill this vision, we have conceptualized &
               successfully implemented various initiatives to help students and
@@ -304,10 +330,10 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 bg-slate-800 rounded-2xl border-4 border-[#BD9f67]/60 p-8 backface-hidden flex flex-col items-center justify-center text-center">
+                <div className="absolute inset-0 bg-slate-800/40 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67]/30 p-8 backface-hidden flex flex-col items-center justify-center text-center shadow-xl hover:border-[#BD9f67]/50 transition-all duration-300">
                   <div className="mb-6">
                     <svg
-                      className="w-20 h-20 text-[#BD9f67]"
+                      className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -325,7 +351,7 @@ const Home = () => {
                   </h3>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 bg-[#BD9f67] rounded-2xl border-4 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center">
+                <div className="absolute inset-0 bg-[#BD9f67]/90 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
                   <p className="text-slate-900 text-center text-base font-medium">
                     Annual orientation programme welcoming freshers to the
                     technical community and club culture.
@@ -345,10 +371,10 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 bg-slate-800 rounded-2xl border-4 border-[#BD9f67]/60 p-8 backface-hidden flex flex-col items-center justify-center text-center">
+                <div className="absolute inset-0 bg-slate-800/40 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67]/30 p-8 backface-hidden flex flex-col items-center justify-center text-center shadow-xl hover:border-[#BD9f67]/50 transition-all duration-300">
                   <div className="mb-6">
                     <svg
-                      className="w-20 h-20 text-[#BD9f67]"
+                      className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -364,7 +390,7 @@ const Home = () => {
                   <h3 className="text-2xl font-bold text-[#BD9f67]">CSOC</h3>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 bg-[#BD9f67] rounded-2xl border-4 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center">
+                <div className="absolute inset-0 bg-[#BD9f67]/90 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
                   <p className="text-slate-900 text-center text-base font-medium">
                     Codeshack Summer of Code - A month-long open source
                     contribution program for students to learn and contribute.
@@ -384,10 +410,10 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 bg-slate-800 rounded-2xl border-4 border-[#BD9f67]/60 p-8 backface-hidden flex flex-col items-center justify-center text-center">
+                <div className="absolute inset-0 bg-slate-800/40 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67]/30 p-8 backface-hidden flex flex-col items-center justify-center text-center shadow-xl hover:border-[#BD9f67]/50 transition-all duration-300">
                   <div className="mb-6">
                     <svg
-                      className="w-20 h-20 text-[#BD9f67]"
+                      className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -405,7 +431,7 @@ const Home = () => {
                   </h3>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 bg-[#BD9f67] rounded-2xl border-4 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center">
+                <div className="absolute inset-0 bg-[#BD9f67]/90 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
                   <p className="text-slate-900 text-center text-base font-medium">
                     Monthly guidance sessions and workshops helping students
                     contribute to open source projects worldwide.
@@ -425,10 +451,10 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 bg-slate-800 rounded-2xl border-4 border-[#BD9f67]/60 p-8 backface-hidden flex flex-col items-center justify-center text-center">
+                <div className="absolute inset-0 bg-slate-800/40 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67]/30 p-8 backface-hidden flex flex-col items-center justify-center text-center shadow-xl hover:border-[#BD9f67]/50 transition-all duration-300">
                   <div className="mb-6">
                     <svg
-                      className="w-20 h-20 text-[#BD9f67]"
+                      className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -446,7 +472,7 @@ const Home = () => {
                   </h3>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 bg-[#BD9f67] rounded-2xl border-4 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center">
+                <div className="absolute inset-0 bg-[#BD9f67]/90 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
                   <p className="text-slate-900 text-center text-base font-medium">
                     Regular hands-on workshops on latest technologies, tools,
                     and frameworks led by industry experts.
@@ -466,10 +492,10 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 bg-slate-800 rounded-2xl border-4 border-[#BD9f67]/60 p-8 backface-hidden flex flex-col items-center justify-center text-center">
+                <div className="absolute inset-0 bg-slate-800/40 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67]/30 p-8 backface-hidden flex flex-col items-center justify-center text-center shadow-xl hover:border-[#BD9f67]/50 transition-all duration-300">
                   <div className="mb-6">
                     <svg
-                      className="w-20 h-20 text-[#BD9f67]"
+                      className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -487,7 +513,7 @@ const Home = () => {
                   </h3>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 bg-[#BD9f67] rounded-2xl border-4 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center">
+                <div className="absolute inset-0 bg-[#BD9f67]/90 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
                   <p className="text-slate-900 text-center text-base font-medium">
                     Active Hackathons throughout the year encouraging innovation
                     and problem-solving among participants.
@@ -507,10 +533,10 @@ const Home = () => {
                 }`}
               >
                 {/* Front */}
-                <div className="absolute inset-0 bg-slate-800 rounded-2xl border-4 border-[#BD9f67]/60 p-8 backface-hidden flex flex-col items-center justify-center text-center">
+                <div className="absolute inset-0 bg-slate-800/40 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67]/30 p-8 backface-hidden flex flex-col items-center justify-center text-center shadow-xl hover:border-[#BD9f67]/50 transition-all duration-300">
                   <div className="mb-6">
                     <svg
-                      className="w-20 h-20 text-[#BD9f67]"
+                      className="w-20 h-20 text-[#BD9f67] drop-shadow-[0_0_8px_rgba(189,159,103,0.3)]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -528,7 +554,7 @@ const Home = () => {
                   </h3>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 bg-[#BD9f67] rounded-2xl border-4 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center">
+                <div className="absolute inset-0 bg-[#BD9f67]/90 backdrop-blur-xl rounded-2xl border-2 border-[#BD9f67] p-8 backface-hidden rotate-y-180 flex items-center justify-center shadow-2xl shadow-[#BD9f67]/30">
                   <p className="text-slate-900 text-center text-base font-medium">
                     Engaging speaker sessions with industry leaders sharing
                     insights on cutting-edge technologies and trends.
@@ -542,18 +568,21 @@ const Home = () => {
 
       <section
         id="join"
-        className="relative py-20 bg-linear-to-br from-slate-800 to-slate-900"
+        className="relative py-20 bg-linear-to-br from-slate-900/50 to-slate-950/50 backdrop-blur-xl"
+        style={{zIndex: 2}}
       >
         <div className="container mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#BD9f67] mb-6">
-            Ready to Join Us?
-          </h2>
-          <Link
-            to="/join"
-            className="inline-block bg-[#BD9f67] text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-[#A88A5C] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-          >
-            Join Now
-          </Link>
+          <div className="bg-slate-800/30 backdrop-blur-xl rounded-3xl p-12 border border-[#BD9f67]/20 shadow-2xl max-w-2xl mx-auto">
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#BD9f67] mb-6">
+              Ready to Join Us?
+            </h2>
+            <Link
+              to="/join"
+              className="inline-block bg-[#BD9f67]/90 backdrop-blur-md text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-[#BD9f67] transition-all duration-300 shadow-lg shadow-[#BD9f67]/20 hover:shadow-2xl hover:shadow-[#BD9f67]/40 hover:scale-105 border border-[#BD9f67]/50"
+            >
+              Join Now
+            </Link>
+          </div>
         </div>
       </section>
     </div>
