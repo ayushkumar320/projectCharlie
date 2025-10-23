@@ -229,7 +229,7 @@ export const Timeline3D = ({
                           }}
                           transition={{ duration: 0.8 }}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                        <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-transparent to-transparent"></div>
                         
                         {event.category && (
                           <div className="absolute top-4 right-4">

@@ -26,7 +26,7 @@ const Gallery = () => {
       />
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/60 to-slate-900/80" style={{ zIndex: 1 }} />
+      <div className="absolute inset-0 bg-linear-to-br from-slate-900/80 via-slate-800/60 to-slate-900/80" style={{ zIndex: 1 }} />
       
       {/* Content */}
       <div className="relative z-10 pt-24 pb-20 px-4 sm:px-6">
